@@ -241,7 +241,7 @@
         </header>
 
         <main id="main">
-        <div class="system-logs" id="system-logs" aria-label="System log"></div>
+        <div class="system-logs" id="system-logs" role="log" aria-label="System log"></div>
 
         <div class="manifesto-content" id="manifesto"></div>
 
@@ -279,7 +279,7 @@
             </div>
         </div>
 
-        <blockquote class="quote" id="quote-text" aria-label="Epigraph"></blockquote>
+        <blockquote class="quote" id="quote-text" role="complementary" aria-label="Epigraph"></blockquote>
         </footer>
     </div>
 
@@ -343,7 +343,9 @@ I also give this practice tangible form through open-source projects. You can fi
                 themeLabel: 'Temayı değiştir',
                 fontLabel: 'Yazı tipini değiştir',
                 langTrLabel: 'Türkçe',
-                langEnLabel: 'İngilizce'
+                langEnLabel: 'İngilizce',
+                logLabel: 'Sistem günlüğü',
+                quoteLabel: 'Alıntı'
             },
             en: {
                 statusLeft: '<b>v5.8.0-beta.1</b> · PRE-RELEASE · ACTIVE DEVELOPMENT<span class="status-note"><span class="status-sep">·</span>Continuous development only.</span>',
@@ -353,7 +355,9 @@ I also give this practice tangible form through open-source projects. You can fi
                 themeLabel: 'Toggle theme',
                 fontLabel: 'Change font',
                 langTrLabel: 'Turkish',
-                langEnLabel: 'English'
+                langEnLabel: 'English',
+                logLabel: 'System log',
+                quoteLabel: 'Epigraph'
             }
         };
 
@@ -421,6 +425,8 @@ I also give this practice tangible form through open-source projects. You can fi
             getElement("lang-en-btn").setAttribute("aria-label", uiCopy.langEnLabel);
             getElement("lang-tr-btn").setAttribute("aria-pressed", String(language === "tr"));
             getElement("lang-en-btn").setAttribute("aria-pressed", String(language === "en"));
+            getElement("system-logs").setAttribute("aria-label", uiCopy.logLabel);
+            getElement("quote-text").setAttribute("aria-label", uiCopy.quoteLabel);
             updateFontButtonLabel();
             localStorage.setItem("lang", language);
         }
