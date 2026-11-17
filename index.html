@@ -1,11 +1,233 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>mahirfatih</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mahir Fatih Ünal — Architect & Builder. Systems, database clusters, blockchain, fintech, AI agents.">
+    <title>Mahir Fatih Ünal — Architect & Builder</title>
+    <style>
+        :root {
+            --bg-color: #f4f5f7;
+            --text-color: #1f2328;
+            --container-bg: #ffffff;
+            --border-color: #d0d7de;
+            --accent-color: #0969da;
+            --dim-text: #57606a;
+            --code-bg: #f6f8fa;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0d1117;
+            --text-color: #c9d1d9;
+            --container-bg: #161b22;
+            --border-color: #30363d;
+            --accent-color: #58a6ff;
+            --dim-text: #8b949e;
+            --code-bg: #1f242c;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .terminal-container {
+            width: 100%;
+            max-width: 900px;
+            background-color: var(--container-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            padding: 24px;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .terminal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .header-controls {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .command {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .theme-toggle,
+        .lang-toggle {
+            background: var(--code-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+
+        .theme-toggle:hover,
+        .lang-toggle:hover {
+            border-color: var(--accent-color);
+        }
+
+        .lang-toggle .active {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .system-logs {
+            font-size: 13px;
+            color: var(--dim-text);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .manifesto-content {
+            font-size: 14px;
+            line-height: 1.8;
+            white-space: pre-line;
+            margin-bottom: 24px;
+        }
+
+        .terminal-footer {
+            border-top: 1px solid var(--border-color);
+            padding-top: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .channels a {
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        .channels a:first-child {
+            margin-left: 0;
+        }
+
+        .channels a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .terminal-footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .channels {
+                margin-top: 5px;
+            }
+            .channels a {
+                margin-left: 0;
+                margin-right: 15px;
+            }
+        }
+    </style>
 </head>
-<body>
-  Mahir Fatih
+<body data-theme="light">
+
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <div><span class="command">mahir@architect:~#</span> ./run-manifesto.sh</div>
+            <div class="header-controls">
+                <button class="lang-toggle" onclick="setLang('tr')" aria-label="Türkçe"><span id="lang-tr">TR</span></button>
+                <button class="lang-toggle" onclick="setLang('en')" aria-label="English"><span id="lang-en">EN</span></button>
+                <button class="theme-toggle" onclick="toggleTheme()" data-i18n="themeBtn">[ 🌓 Tema Değiş ]</button>
+            </div>
+        </div>
+
+        <div class="system-logs">
+            <div>&gt; initializing system core... [OK]</div>
+            <div>&gt; <span data-i18n="log1">loading experience stack: 1998 -&gt; present (28 years) [OK]</span></div>
+            <div>&gt; <span data-i18n="log2">mounting modules: systems, database_clusters, blockchain, fintech, ai_agents [OK]</span></div>
+            <div>&gt; <span data-i18n="log3">status: active builder &amp; architect</span></div>
+        </div>
+
+        <div class="manifesto-content" data-i18n="manifesto">
+Mahir Fatih loading....
+        </div>
+
+        <div class="terminal-footer">
+            <div><span class="command">mahir@architect:~#</span> contact --channels</div>
+            <div class="channels">
+                <a href="https://github.com/mahirfatih" target="_blank" rel="noopener noreferrer">[GitHub]</a>
+                <a href="https://linkedin.com/in/mahirfatih" target="_blank" rel="noopener noreferrer">[LinkedIn]</a>
+                <a href="https://www.youtube.com/@mahirfatihunal" target="_blank" rel="noopener noreferrer">[YouTube]</a>
+                <a href="https://scholar.google.com/citations?user=o7zAj_cAAAAJ" target="_blank" rel="noopener noreferrer">[Scholar]</a>
+                <a href="mailto:irtibat@mahirfatih.com">[Email]</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const I18N = {
+            tr: {
+                themeBtn: "[ 🌓 Tema Değiş ]",
+                log1: "loading experience stack: 1998 -> present (28 yıl) [OK]",
+                log2: "mounting modules: systems, database_clusters, blockchain, fintech, ai_agents [OK]",
+                log3: "status: active builder & architect",
+                manifesto: "Mahir Fatih loading...."
+            },
+            en: {
+                themeBtn: "[ 🌓 Change Theme ]",
+                log1: "loading experience stack: 1998 -> present (28 years) [OK]",
+                log2: "mounting modules: systems, database_clusters, blockchain, fintech, ai_agents [OK]",
+                log3: "status: active builder & architect",
+                manifesto: "Mahir Fatih loading...."
+            }
+        };
+
+        function setLang(lang) {
+            document.documentElement.lang = lang;
+            document.querySelectorAll("[data-i18n]").forEach(el => {
+                const key = el.getAttribute("data-i18n");
+                if (I18N[lang][key]) el.textContent = I18N[lang][key];
+            });
+            document.getElementById("lang-tr").classList.toggle("active", lang === "tr");
+            document.getElementById("lang-en").classList.toggle("active", lang === "en");
+            localStorage.setItem("lang", lang);
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute("data-theme");
+            const next = currentTheme === "light" ? "dark" : "light";
+            body.setAttribute("data-theme", next);
+            localStorage.setItem("theme", next);
+        }
+
+        // Restore preferences
+        const savedTheme = localStorage.getItem("theme")
+            || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.body.setAttribute("data-theme", savedTheme);
+        setLang(localStorage.getItem("lang") || "tr");
+    </script>
 </body>
 </html>
