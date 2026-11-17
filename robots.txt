@@ -1,4 +1,5 @@
+# mahirfatih.github.io
 User-agent: *
 Allow: /
 
-Sitemap: https://mahirfatih.com/sitemap.xml
+Sitemap: https://mahirfatih.github.io/sitemap.xml
