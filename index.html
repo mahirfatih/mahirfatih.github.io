@@ -3,234 +3,433 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mahir Fatih Ünal — Architect & Builder. Systems, database clusters, blockchain, fintech, AI agents.">
-    <title>Mahir Fatih Ünal — Architect & Builder</title>
+    <title>Mahir Fatih Ünal — Architect &amp; Builder</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-color: #f4f5f7;
-            --text-color: #1f2328;
-            --container-bg: #ffffff;
-            --border-color: #d0d7de;
-            --accent-color: #0969da;
-            --dim-text: #57606a;
-            --code-bg: #f6f8fa;
-        }
+        @font-face { font-family:"SFMono Liga"; src:url("fonts/sfmono-regular.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
+        @font-face { font-family:"SFMono Liga"; src:url("fonts/sfmono-bold.woff2") format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Cascadia Code"; src:url("fonts/cascadia-regular.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Cascadia Code"; src:url("fonts/cascadia-bold.woff2") format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Fira Code"; src:url("fonts/firacode-regular.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Fira Code"; src:url("fonts/firacode-bold.woff2") format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Hack"; src:url("fonts/hack-regular.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Hack"; src:url("fonts/hack-bold.woff2") format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Victor Mono"; src:url("fonts/victor-regular.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Victor Mono"; src:url("fonts/victor-bold.woff2") format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
+        @font-face { font-family:"IBM Plex Mono"; src:url("fonts/plex-regular.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
+        @font-face { font-family:"IBM Plex Mono"; src:url("fonts/plex-bold.woff2") format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Inconsolata"; src:url("fonts/inconsolata-regular.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Inconsolata"; src:url("fonts/inconsolata-bold.woff2") format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Maple Mono"; src:url("fonts/maple-regular.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Maple Mono"; src:url("fonts/maple-bold.woff2") format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Geist Mono"; src:url("fonts/geist-regular.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Geist Mono"; src:url("fonts/geist-bold.woff2") format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Departure Mono"; src:url("fonts/departure-regular.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Departure Mono"; src:url("fonts/departure-regular.woff2") format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Monaspace Argon"; src:url("fonts/monaspace-regular.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Monaspace Argon"; src:url("fonts/monaspace-bold.woff2") format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Commit Mono"; src:url("fonts/commit-regular.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Commit Mono"; src:url("fonts/commit-bold.woff2") format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Source Code Pro"; src:url("fonts/sourcecode-regular.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Source Code Pro"; src:url("fonts/sourcecode-bold.woff2") format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Martian Mono"; src:url("fonts/martian-regular.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Martian Mono"; src:url("fonts/martian-bold.woff2") format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Space Mono"; src:url("fonts/space-regular.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
+        @font-face { font-family:"Space Mono"; src:url("fonts/space-bold.woff2") format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
 
-        [data-theme="dark"] {
-            --bg-color: #0d1117;
-            --text-color: #c9d1d9;
-            --container-bg: #161b22;
-            --border-color: #30363d;
-            --accent-color: #58a6ff;
-            --dim-text: #8b949e;
-            --code-bg: #1f242c;
-        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { -webkit-text-size-adjust: 100%; }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
+        :root { --vh: 100vh; --bg-color:#f4f5f7; --text-color:#1f2328; --container-bg:#ffffff; --border-color:#d0d7de; --accent-color:#0969da; --dim-text:#57606a; --code-bg:#f6f8fa; --mono:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+        body[data-font="sfmono"] { --mono:"SFMono Liga", ui-monospace, SFMono-Regular, Menlo, monospace; }
+        body[data-font="cascadia"] { --mono:"Cascadia Code", ui-monospace, SFMono-Regular, Menlo, monospace; }
+        body[data-font="firacode"] { --mono:"Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace; }
+        body[data-font="hack"] { --mono:"Hack", ui-monospace, SFMono-Regular, Menlo, monospace; }
+        body[data-font="victor"] { --mono:"Victor Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
+        body[data-font="plex"] { --mono:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
+        body[data-font="inconsolata"] { --mono:"Inconsolata", ui-monospace, SFMono-Regular, Menlo, monospace; }
+        body[data-font="maple"] { --mono:"Maple Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
+        body[data-font="geist"] { --mono:"Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
+        body[data-font="departure"] { --mono:"Departure Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
+        body[data-font="monaspace"] { --mono:"Monaspace Argon", ui-monospace, SFMono-Regular, Menlo, monospace; }
+        body[data-font="commit"] { --mono:"Commit Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
+        body[data-font="sourcecode"] { --mono:"Source Code Pro", ui-monospace, SFMono-Regular, Menlo, monospace; }
+        body[data-font="martian"] { --mono:"Martian Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
+        body[data-font="space"] { --mono:"Space Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
+        [data-theme="dark"] { --bg-color:#0d1117; --text-color:#c9d1d9; --container-bg:#161b22; --border-color:#30363d; --accent-color:#58a6ff; --dim-text:#8b949e; --code-bg:#1f242c; }
+        body { background-color:var(--bg-color); color:var(--text-color); font-family:var(--mono); margin:0; padding:clamp(10px, 2.5vw, 20px); display:flex; justify-content:center; min-height:var(--vh); min-height:100dvh; overflow-x:hidden; }
+        .terminal-container { width:100%; max-width:min(900px, 100%); background-color:var(--container-bg); border:1px solid var(--border-color); border-radius:6px; box-shadow:0 8px 24px rgba(0,0,0,0.1); padding:clamp(14px, 3vw, 24px); box-sizing:border-box; margin:auto; }
+        .terminal-header { display:flex; flex-direction:column; gap:clamp(8px, 1.2vw, 10px); margin-bottom:clamp(14px, 2.5vw, 20px); font-size:clamp(11.5px, 1.5vw, 14px); }
+        .header-controls { display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; margin-left:auto; padding-bottom:clamp(8px, 1.4vw, 12px); border-bottom:1px solid var(--border-color); width:100%; }
+        .command { color:var(--accent-color); font-weight:bold; }
+        .theme-toggle, .lang-toggle { background:var(--code-bg); border:1px solid var(--border-color); color:var(--text-color); padding:clamp(5px, .8vw, 7px) clamp(9px, 1.4vw, 13px); border-radius:4px; cursor:pointer; font-family:inherit; font-size:clamp(11px, 1.3vw, 13px); white-space:nowrap; }
+        .theme-toggle:hover, .lang-toggle:hover { border-color:var(--accent-color); }
+        .lang-toggle .active { color:var(--accent-color); font-weight:bold; }
+        .system-logs { font-size:clamp(11px, 1.4vw, 13px); color:var(--dim-text); margin-bottom:clamp(14px, 2.5vw, 20px); line-height:1.5; overflow-wrap:anywhere; }
+        .manifesto-version { font-size:clamp(11px, 1.4vw, 13px); color:var(--dim-text); opacity:.85; overflow-wrap:anywhere; }
 
-        .terminal-container {
-            width: 100%;
-            max-width: 900px;
-            background-color: var(--container-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-            padding: 24px;
-            box-sizing: border-box;
-            transition: background-color 0.3s ease, border-color 0.3s ease;
+        /* Personal version bar — full width at the top of the container */
+        .status-bar {
+            display:flex; justify-content:space-between; align-items:center;
+            gap:clamp(6px,1.5vw,16px); flex-wrap:wrap;
+            background:var(--code-bg);
+            border:1px solid var(--border-color);
+            border-radius:4px;
+            padding:clamp(6px,1.2vw,9px) clamp(10px,1.6vw,14px);
+            margin-bottom:clamp(12px,2vw,16px);
+            font-size:clamp(9.5px,1.2vw,11px);
+            line-height:1.6;
+            color:var(--dim-text);
+            overflow-wrap:anywhere;
         }
+        .status-bar b { color:var(--accent-color); font-weight:700; font-size:clamp(11px,1.4vw,12.5px); }
+        .status-sep { margin:0 clamp(4px,1vw,8px); opacity:.45; }
+        .status-right { white-space:nowrap; margin-left:auto; }
+        .prompt-line { min-width:0; overflow-wrap:anywhere; }
+        .manifesto-content { font-size:clamp(12.5px, 1.55vw, 14px); line-height:1.5; white-space:pre-line; margin-bottom:clamp(16px, 3vw, 24px); }
+        .manifesto-content a { color:var(--accent-color); text-decoration:none; }
+        .manifesto-content a:hover { text-decoration:underline; }
+        .terminal-footer { border-top:1px solid var(--border-color); padding-top:clamp(12px, 2vw, 16px); display:flex; justify-content:space-between; align-items:center; font-size:clamp(11px, 1.4vw, 13px); flex-wrap:wrap; gap:10px; }
 
-        .terminal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 12px;
-            margin-bottom: 20px;
-            font-size: 14px;
-            gap: 10px;
-            flex-wrap: wrap;
+        /* Bottom epigraph */
+        .quote {
+            margin:clamp(16px, 3vw, 26px) 0 0;
+            padding:clamp(10px, 2vw, 14px) clamp(12px, 2.4vw, 18px);
+            border-left:3px solid var(--accent-color);
+            background:var(--code-bg);
+            border-radius:0 4px 4px 0;
+            font-size:clamp(11px, 1.35vw, 13px);
+            line-height:1.7;
+            color:var(--dim-text);
+            font-style:italic;
+            overflow-wrap:anywhere;
         }
+        .channels a { color:var(--accent-color); text-decoration:none; margin-left:10px; }
+        .channels a:first-child { margin-left:0; }
+        .channels a:hover { text-decoration:underline; }
+        .channels { display:flex; flex-wrap:wrap; gap:6px 0; }
+        .font-credits { font-size:clamp(10px, 1.2vw, 12px); color:var(--dim-text); line-height:1.7; margin-bottom:clamp(14px, 2.5vw, 20px); overflow-wrap:anywhere; }
+        .font-credits a { color:var(--accent-color); text-decoration:none; }
+        .font-credits a:hover { text-decoration:underline; }
 
-        .header-controls {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
+        /* (signoff line removed) */
+        .manifesto-content p { overflow-wrap:break-word; }
+        @media (max-width:600px) {
+            .status-note { display:none; }
+            .terminal-footer { flex-direction:column; align-items:flex-start; }
+            .channels { margin-top:5px; }
+            .channels a { margin-left:0; margin-right:15px; }
+            .terminal-header { flex-direction:column; align-items:flex-start; }
+            .status-right { white-space:normal; }
+            .header-controls { width:100%; }
+            .manifesto-content p { text-align:left; text-indent:1em; }
+            .terminal-container { border-radius:0; margin:0 calc(-1 * clamp(10px, 2.5vw, 20px)); width:calc(100% + 2 * clamp(10px, 2.5vw, 20px)); max-width:none; border-left:0; border-right:0; }
         }
-
-        .command {
-            color: var(--accent-color);
-            font-weight: bold;
-        }
-
-        .theme-toggle,
-        .lang-toggle {
-            background: var(--code-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-color);
-            padding: 6px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 12px;
-            transition: all 0.2s;
-        }
-
-        .theme-toggle:hover,
-        .lang-toggle:hover {
-            border-color: var(--accent-color);
-        }
-
-        .lang-toggle .active {
-            color: var(--accent-color);
-            font-weight: bold;
-        }
-
-        .system-logs {
-            font-size: 13px;
-            color: var(--dim-text);
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-
-        .manifesto-content {
-            font-size: 14px;
-            line-height: 1.8;
-            white-space: pre-line;
-            margin-bottom: 24px;
-        }
-
-        .terminal-footer {
-            border-top: 1px solid var(--border-color);
-            padding-top: 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 13px;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .channels a {
-            color: var(--accent-color);
-            text-decoration: none;
-            margin-left: 10px;
-        }
-
-        .channels a:first-child {
-            margin-left: 0;
-        }
-
-        .channels a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 600px) {
-            .terminal-footer {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .channels {
-                margin-top: 5px;
-            }
-            .channels a {
-                margin-left: 0;
-                margin-right: 15px;
-            }
+        @media (max-height:560px) and (orientation:landscape) {
+            body { align-items:flex-start; }
+            .manifesto-content { line-height:1.5; }
+            .system-logs { line-height:1.4; }
         }
     </style>
 </head>
 <body data-theme="light">
-
     <div class="terminal-container">
+        <div class="status-bar" title="Mahir Fatih Ünal — kişisel sürüm sistemi">
+            <div class="status-left" id="status-left"></div>
+            <div class="status-right" id="status-right"></div>
+        </div>
         <div class="terminal-header">
-            <div><span class="command">mahir@architect:~#</span> ./run-manifesto.sh</div>
             <div class="header-controls">
-                <button class="lang-toggle" onclick="setLang('tr')" aria-label="Türkçe"><span id="lang-tr">TR</span></button>
-                <button class="lang-toggle" onclick="setLang('en')" aria-label="English"><span id="lang-en">EN</span></button>
-                <button class="theme-toggle" onclick="toggleTheme()" data-i18n="themeBtn">[ Light / Dark ]</button>
+                <button class="lang-toggle" onclick="setLanguage('tr')"><span id="lang-tr">TR</span></button>
+                <button class="lang-toggle" onclick="setLanguage('en')"><span id="lang-en">EN</span></button>
+                <button class="theme-toggle" onclick="toggleTheme()">[ Light / Dark ]</button>
+                <button class="theme-toggle" id="font-btn" onclick="cycleFont()">[ Font: JetBrains ]</button>
             </div>
+            <div class="prompt-line"><span class="command">mahirfatih@architect:~#</span> ./run-manifesto.sh <span class="manifesto-version" id="manifesto-version"></span></div>
         </div>
 
-        <div class="system-logs">
-            <div>&gt; initializing system core... [OK]</div>
-            <div>&gt; <span data-i18n="log1">loading experience stack: 1998 -&gt; present (30+ years) [OK]</span></div>
-            <div>&gt; <span data-i18n="log2">mounting modules: systems, database_clusters, blockchain, fintech, ai_agents [OK]</span></div>
-            <div>&gt; <span data-i18n="log3">status: active builder &amp; architect</span></div>
-        </div>
+        <div class="system-logs" id="system-logs"></div>
 
-        <div class="manifesto-content" data-i18n="manifesto">
-Mahir Fatih loading....
+        <div class="manifesto-content" id="manifesto"></div>
+
+        <div class="font-credits">
+            <span class="command">&gt; credits</span> fonts:
+            <a href="https://github.com/JetBrains/JetBrainsMono" target="_blank" rel="noopener noreferrer">JetBrains Mono</a> ·
+            <a href="https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized" target="_blank" rel="noopener noreferrer">SF Mono Nerd</a> ·
+            <a href="https://github.com/microsoft/cascadia-code" target="_blank" rel="noopener noreferrer">Cascadia Code</a> ·
+            <a href="https://github.com/tonsky/FiraCode" target="_blank" rel="noopener noreferrer">Fira Code</a> ·
+            <a href="https://github.com/source-foundry/Hack" target="_blank" rel="noopener noreferrer">Hack</a> ·
+            <a href="https://github.com/rubjo/victor-mono" target="_blank" rel="noopener noreferrer">Victor Mono</a> ·
+            <a href="https://github.com/IBM/plex" target="_blank" rel="noopener noreferrer">IBM Plex Mono</a> ·
+            <a href="https://github.com/googlefonts/Inconsolata" target="_blank" rel="noopener noreferrer">Inconsolata</a> ·
+            <a href="https://github.com/subframe7536/maple-font" target="_blank" rel="noopener noreferrer">Maple Mono</a> ·
+            <a href="https://github.com/vercel/geist-font" target="_blank" rel="noopener noreferrer">Geist Mono</a> ·
+            <a href="https://github.com/rektdeckard/departure-mono" target="_blank" rel="noopener noreferrer">Departure Mono</a> ·
+            <a href="https://github.com/githubnext/monaspace" target="_blank" rel="noopener noreferrer">Monaspace</a> ·
+            <a href="https://github.com/eigilnikolajsen/commit-mono" target="_blank" rel="noopener noreferrer">Commit Mono</a> ·
+            <a href="https://github.com/adobe-fonts/source-code-pro" target="_blank" rel="noopener noreferrer">Source Code Pro</a> ·
+            <a href="https://github.com/google/fonts/tree/main/ofl/martianmono" target="_blank" rel="noopener noreferrer">Martian Mono</a> ·
+            <a href="https://github.com/google/fonts/tree/main/ofl/spacemono" target="_blank" rel="noopener noreferrer">Space Mono</a>
         </div>
 
         <div class="terminal-footer">
-            <div><span class="command">mahir@architect:~#</span> contact --channels</div>
+            <div><span class="command">mahirfatih@architect:~#</span> contact --channels</div>
             <div class="channels">
                 <a href="https://github.com/mahirfatih" target="_blank" rel="noopener noreferrer">[GitHub]</a>
                 <a href="https://linkedin.com/in/mahirfatih" target="_blank" rel="noopener noreferrer">[LinkedIn]</a>
+                <a href="https://x.com/mahirfatihunal" target="_blank" rel="noopener noreferrer">[X]</a>
                 <a href="https://www.youtube.com/@mahirfatihunal" target="_blank" rel="noopener noreferrer">[YouTube]</a>
                 <a href="https://scholar.google.com/citations?user=o7zAj_cAAAAJ" target="_blank" rel="noopener noreferrer">[Scholar]</a>
                 <a href="mailto:irtibat@mahirfatih.com">[Email]</a>
             </div>
         </div>
+
+        <blockquote class="quote" id="quote-text"></blockquote>
     </div>
 
     <script>
-        const I18N = {
+        // JavaScript naming follows the MDN style guide (see docs/guides/NAMING.md):
+        // functions and variables are camelCase, constants are UPPER_CASE,
+        // booleans read as `is` / `has`, and a name says what the value is.
+        const WORK_START_YEAR = 1995;   // first job (age 13)
+        const CODE_START_YEAR = 1998;   // started coding
+        const CURRENT_YEAR = new Date().getFullYear();
+        const WORK_YEARS = CURRENT_YEAR - WORK_START_YEAR;
+        const CODE_YEARS = CURRENT_YEAR - CODE_START_YEAR;
+
+        const LOGS = {
+            tr: [
+                "> initializing system core... [OK]",
+                "> first_contact_with_machines: age 13 — Atari 2600, 486DX [OK]",
+                "> loading experience stack: work since 1995 (" + WORK_YEARS + "+ yıl) · code since 1998 (" + CODE_YEARS + " yıl) [OK]",
+                "> mounting modules: systems, database_clusters, distributed_infra, blockchain, ai_agents, local_llm [OK]",
+                "> loading education: iktisat, isletme -> engineering_management (MSc) -> bilisim (MSc) [OK]",
+                "> loading publications: \"Büyük Veri ve Semantik\" (2015), \"Dijitalleşmenin Transhümanizme Etkisi\" (2019) + 40'ı aşkın atıf [OK]",
+                "> status: active builder & architect"
+            ],
+            en: [
+                "> initializing system core... [OK]",
+                "> first_contact_with_machines: age 13 — Atari 2600, 486DX [OK]",
+                "> loading experience stack: work since 1995 (" + WORK_YEARS + "+ years) · code since 1998 (" + CODE_YEARS + " years) [OK]",
+                "> mounting modules: systems, database_clusters, distributed_infra, blockchain, ai_agents, local_llm [OK]",
+                "> loading education: economics, business -> engineering_management (MSc) -> information_systems (MSc) [OK]",
+                "> loading publications: \"Big Data and Semantics\" (2015), \"The Effects of Digitization on Transhumanism\" (2019) + 40+ citations [OK]",
+                "> status: active builder & architect"
+            ]
+        };
+
+        const MANIFESTO_TR = `13 yaşından beri iş hayatının ve makinelerle iç içeyim, 1998'den bu yana ise ilk günkü çocuksu merakla, tutkuyla ve kesintisiz bir disiplinle kod yazıyorum. 30 yıla yakın süredir yazılımın, sistem mimarilerinin, veritabanlarının ve ağların en derin mutfağındayım. Atari 2600 klonları ve 486DX ile başlayan yolculuğum, 90'ların sonundan bugüne dek farklı ölçeklerdeki kurumlarda yürüttüğüm projelerle köklü bir pratiğe dönüştü. Yalnızca soyut kodlar üreten biri değilim; ilişkisel ve NoSQL veritabanlarından büyük veri katmanlarına, sunucu konfigürasyonlarından sistem yönetimine kadar her türlü dağıtık veya tekil altyapıyı tek başına kurar, sağlamlaştırır ve ayağa kaldırırım. Bugün ise blok zinciri, kripto paralar, dağıtık ağlar, akıllı ajan mimarileri, yapay zekâ ve ajan tabanlı entegrasyonlar, yerel LLM çözümleri ve modern mimari yaklaşımları alanında uçtan uca çözümler üretmeye halen büyük bir heyecan ve azimle devam ediyorum.
+
+Zihinsel ve mesleki birikimimin temelinde net bir düstur yatar: <strong>Akademik teori ile mutfaktan gelen pratik mühendisliği (praxis) aynı potada eriten, disiplinlerarası bir mimari anlayış</strong>. Bilgiyi kendine hapseden ya da malumatfuruşluk taslayan bir tavrı hiçbir dönem benimsemedim. Kodlama, hata ayıklama, mimari tasarım... Sahada elini kirletmeden teoriden konuşanlardan hiç olmadım. Anadolu Üniversitesi İktisat ve İşletme'nin ardından Mühendislik Yönetimi yüksek lisansımı tamamladım. 2015'te yayımlanan <em>Büyük Veri ve Semantik</em> isimli kitabımın ardından Marmara Üniversitesi'nde Bilişim yüksek lisansına başladım ve halen tez aşamasındayım. Edindiğim teorik derinliği, 2019'da kaleme aldığım ve çeşitli mecralarda neşredilen transhümanizm ve dijitalleşme odaklı makalelerimle, ayrıca televizyon ekranlarında yaptığım teknoloji ve dijital determinizm üzerine fikrî söyleşilerle kamusal alana taşıdım. Zira hakiki bilginin, ancak paylaşıldıkça ve diyalektik bir süzgeçten geçtikçe kıymet kazanacağına inanıyorum.
+
+Teknolojiye ve dijital evrene yalnızca araçsal bir rasyonaliteyle yaklaşmıyorum; bilişimin insan zihni, toplumsal akışlar, simülakrlar ve varoluş üzerindeki dönüştürücü etkilerini sorgulayan felsefi metinler ve denemeler kaleme alıyorum. Kadim felsefe literatüründen süzülen kavramlarla modern dijital çağın açmazlarını okuyor; bu zihinsel sancıları kelimelerin sınırlarının ötesine taşıyorum.
+
+Kodlama, hata ayıklama, sistem zafiyetlerini inceleme ve yapay zekâ destekli geliştirme dahil olmak üzere sistemlerin en kuytu dehlizlerini çözmek, devasa yapılar kurgulamak, çağın ruhunu (<em>Zeitgeist</em>) teknolojiyle yakalamak ve kodun sunduğu o sınırsız imkânlar evrenine hayranlıkla yaklaşmak benim için alelade bir meslekten öte, 13 yaşından beri ve 1998'den bu yana varlığı okuma, anlamlandırma ve yeniden inşa etme biçimidir.
+
+Anlattığım bu pratiği açık kaynak projelerle de somutlaştırıyorum. Akademik yayınlarıma ve atıf kaydıma <a href="https://scholar.google.com/citations?user=o7zAj_cAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a> profilimden (40'ı aşkın atıf), açık kaynak projelerime ve kod pratiğime <a href="https://github.com/mahirfatih" target="_blank" rel="noopener noreferrer">GitHub</a> profilimden, mesleki deneyimlerime <a href="https://linkedin.com/in/mahirfatih" target="_blank" rel="noopener noreferrer">LinkedIn</a> profilimden, güncel düşüncelerime <a href="https://x.com/mahirfatihunal" target="_blank" rel="noopener noreferrer">Twitter/X</a> hesabımdan, video içeriklerime ise <a href="https://www.youtube.com/@mahirfatihunal" target="_blank" rel="noopener noreferrer">YouTube</a> kanalımdan ulaşabilirsiniz.`;
+
+        const MANIFESTO_EN = `Since I was 13, I’ve been immersed in working life and machinery. And since 1998, I’ve been writing code with the same childlike curiosity, passion, and unwavering discipline I had on day one. For nearly three decades, I’ve been deep in the inner workings of software, system architecture, databases, and networks. What began with Atari 2600 clones and the 486DX grew into a substantial body of hands-on experience through projects I’ve led at organizations of every scale, from the late ’90s to the present. I’m not someone who merely produces abstract code: from relational and NoSQL databases to big data layers, from server configuration to systems administration, I build, harden, and bring online all kinds of distributed and standalone infrastructure on my own. Today, I’m still driven by the same excitement and determination as I develop end-to-end solutions in blockchain, cryptocurrencies, distributed networks, intelligent-agent architectures, AI and agent-based integrations, local LLM solutions, and modern architectural approaches.
+
+At the heart of my intellectual and professional life is a clear guiding principle: <strong>an interdisciplinary approach to architecture that brings academic theory and hands-on engineering praxis into the same crucible</strong>. I’ve never subscribed to an attitude of hoarding knowledge or flaunting erudition. Coding, debugging, architectural design... I’ve never been one to talk theory without getting my hands dirty in the field. After studying Economics and Business at Anadolu University, I completed a master’s degree in Engineering Management. Following the publication of my 2015 book <em>Big Data and Semantics</em>, I began a master’s program in Information Systems at Marmara University, where I am currently working on my thesis. I’ve brought that theoretical depth into the public sphere through articles on transhumanism and digitalization — written in 2019 and published across various outlets — as well as through television conversations about technology and digital determinism. For I believe genuine knowledge gains value only when it is shared and tested through dialectical exchange.
+
+I don’t approach technology and the digital universe through instrumental rationality alone; I write philosophical texts and essays that question computing’s transformative effects on the human mind, social currents, simulacra, and existence itself. I read the dilemmas of the modern digital age through concepts distilled from the canon of classical philosophy, and carry these intellectual struggles beyond the limits of words.
+
+For me, exploring the most hidden corridors of systems — through coding, debugging, investigating system vulnerabilities, and AI-assisted development — designing vast structures, capturing the spirit of the age (<em>Zeitgeist</em>) through technology, and marveling at the limitless universe of possibilities that code offers are more than just a profession. Since I was 13, and especially since 1998, they have been my way of reading, making sense of, and rebuilding existence.
+
+I also give this practice tangible form through open-source projects. You can find my academic publications and citation record (more than 40 citations) on my <a href="https://scholar.google.com/citations?user=o7zAj_cAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a> profile, my open-source projects and coding practice on <a href="https://github.com/mahirfatih" target="_blank" rel="noopener noreferrer">GitHub</a>, my professional experience on <a href="https://linkedin.com/in/mahirfatih" target="_blank" rel="noopener noreferrer">LinkedIn</a>, my latest thoughts on <a href="https://x.com/mahirfatihunal" target="_blank" rel="noopener noreferrer">Twitter/X</a>, and my video content on <a href="https://www.youtube.com/@mahirfatihunal" target="_blank" rel="noopener noreferrer">YouTube</a>.`;
+
+        const UI = {
             tr: {
-                themeBtn: "[ Light / Dark ]",
-                log1: "loading experience stack: 1998 -> present (30+ yıl) [OK]",
-                log2: "mounting modules: systems, database_clusters, blockchain, fintech, ai_agents [OK]",
-                log3: "status: active builder & architect",
-                manifesto: "Mahir Fatih loading...."
+                statusLeft: '<b>v5.8.0-beta.1</b> · ÖN SÜRÜM · AKTİF GELİŞTİRME<span class="status-note"><span class="status-sep">·</span>Final sürüm yok, sadece sürekli geliştirme.</span>',
+                statusRight: 'Kod Adı: BACK TO BUILDING',
+                manifestoVersion: '> manifesto v2026.11 · son rev: 2026-11-18 · TR/EN [OK]'
             },
             en: {
-                themeBtn: "[ Light / Dark ]",
-                log1: "loading experience stack: 1998 -> present (30+ years) [OK]",
-                log2: "mounting modules: systems, database_clusters, blockchain, fintech, ai_agents [OK]",
-                log3: "status: active builder & architect",
-                manifesto: "Mahir Fatih loading...."
+                statusLeft: '<b>v5.8.0-beta.1</b> · PRE-RELEASE · ACTIVE DEVELOPMENT<span class="status-note"><span class="status-sep">·</span>Continuous development only.</span>',
+                statusRight: 'Codename: BACK TO BUILDING',
+                manifestoVersion: '> manifesto v2026.11 · last rev: 2026-11-18 · TR/EN [OK]'
             }
         };
 
-        function setLang(lang) {
-            document.documentElement.lang = lang;
-            document.querySelectorAll("[data-i18n]").forEach(el => {
-                const key = el.getAttribute("data-i18n");
-                if (I18N[lang][key]) el.textContent = I18N[lang][key];
-            });
-            document.getElementById("lang-tr").classList.toggle("active", lang === "tr");
-            document.getElementById("lang-en").classList.toggle("active", lang === "en");
-            localStorage.setItem("lang", lang);
+        const QUOTE = {
+            tr: 'Gregor Samsa bir sabah bunaltıcı düşlerden uyandığında, kendini dev bir LLM\'nin bağlam (context) penceresinde milyarlarca parametreye ve sonsuz token akışına dönüşmüş olarak buldu.',
+            en: 'When Gregor Samsa awoke one morning from troubled dreams, he found himself transformed in his bed into the context window of a giant LLM, with billions of parameters and an endless stream of tokens.'        };
+
+        // ---- DOM + render cache ----
+        // getElementById used to run 7 times per render → one-time cache.
+        const elementCache = Object.create(null);
+        function getElement(id) {
+            return elementCache[id] || (elementCache[id] = document.getElementById(id));
+        }
+
+        // HTML output is built once per language (no repeated split + map + join).
+        const logsHtmlCache = Object.create(null);
+        function getLogsHtml(language) {
+            let html = logsHtmlCache[language];
+            if (html === undefined) {
+                html = LOGS[language]
+                    .map((line) => "<div>" + line.replace(/&/g, "&amp;").replace(/</g, "&lt;") + "</div>")
+                    .join("");
+                logsHtmlCache[language] = html;
+            }
+            return html;
+        }
+
+        const manifestoHtmlCache = Object.create(null);
+        function getManifestoHtml(language) {
+            let html = manifestoHtmlCache[language];
+            if (html === undefined) {
+                const text = language === "tr" ? MANIFESTO_TR : MANIFESTO_EN;
+                html = text
+                    .split(/\n\n+/)
+                    .map((paragraph) => '<p style="text-indent:1.5em; margin:0 0 1.8em 0; text-align:justify">' + paragraph + '</p>')
+                    .join("");
+                manifestoHtmlCache[language] = html;
+            }
+            return html;
+        }
+
+        let currentLanguage = null;
+
+        function setLanguage(language) {
+            renderManifesto(language);
+        }
+
+        function renderManifesto(language) {
+            if (language !== "tr" && language !== "en") language = "en";
+            if (language === currentLanguage) return; // skip the re-render when the language is unchanged
+            currentLanguage = language;
+            document.documentElement.lang = language;
+            const uiCopy = UI[language];
+            getElement("status-left").innerHTML = uiCopy.statusLeft;
+            getElement("status-right").textContent = uiCopy.statusRight;
+            getElement("manifesto-version").textContent = uiCopy.manifestoVersion;
+            getElement("quote-text").textContent = QUOTE[language] || QUOTE.en;
+            getElement("system-logs").innerHTML = getLogsHtml(language);
+            getElement("manifesto").innerHTML = getManifestoHtml(language);
+            getElement("lang-tr").classList.toggle("active", language === "tr");
+            getElement("lang-en").classList.toggle("active", language === "en");
+            localStorage.setItem("lang", language);
+        }
+
+        const FONTS = [
+            {id:"jetbrains", label:"JetBrains",    family:"JetBrains Mono"},
+            {id:"sfmono",    label:"SF Mono",      family:"SFMono Liga"},
+            {id:"cascadia",  label:"Cascadia",     family:"Cascadia Code"},
+            {id:"firacode",  label:"Fira Code",    family:"Fira Code"},
+            {id:"hack",      label:"Hack",         family:"Hack"},
+            {id:"victor",    label:"Victor Mono",  family:"Victor Mono"},
+            {id:"plex",      label:"Plex Mono",    family:"IBM Plex Mono"},
+            {id:"inconsolata", label:"Inconsolata", family:"Inconsolata"},
+            {id:"maple",     label:"Maple Mono",   family:"Maple Mono"},
+            {id:"geist",     label:"Geist Mono",   family:"Geist Mono"},
+            {id:"departure", label:"Departure Mono", family:"Departure Mono"},
+            {id:"monaspace", label:"Monaspace",    family:"Monaspace Argon"},
+            {id:"commit",    label:"Commit Mono",  family:"Commit Mono"},
+            {id:"sourcecode",label:"Source Code",  family:"Source Code Pro"},
+            {id:"martian",   label:"Martian Mono", family:"Martian Mono"},
+            {id:"space",     label:"Space Mono",   family:"Space Mono"}
+        ];
+
+        const FONT_BY_ID = new Map(FONTS.map((font) => [font.id, font]));
+
+        // ---- Smart font loading ----
+        // ensureFontLoaded(id): forces a font load; concurrent calls share one promise.
+        // hover prefetches the next font → no wait on click.
+        const fontLoadCache = new Map(); // font id -> Promise (in-flight or settled)
+
+        function ensureFontLoaded(id) {
+            const cachedLoad = fontLoadCache.get(id);
+            if (cachedLoad) return cachedLoad;
+            const font = FONT_BY_ID.get(id);
+            if (!font || !document.fonts) return Promise.resolve();
+            const quotedFamily = '"' + font.family + '"';
+            const loadPromise = Promise.all([
+                document.fonts.load('400 16px ' + quotedFamily),
+                document.fonts.load('700 16px ' + quotedFamily)
+            ]).catch(() => {}); // never reject, even on error
+            fontLoadCache.set(id, loadPromise);
+            return loadPromise;
+        }
+
+        function getNextFontId() {
+            const currentFontId = elementCache.currentFontId
+                || (elementCache.currentFontId = document.body.getAttribute("data-font") || "jetbrains");
+            const currentIndex = FONTS.findIndex((font) => font.id === currentFontId);
+            return FONTS[(currentIndex + 1) % FONTS.length].id;
+        }
+
+        function setFont(id) {
+            document.body.setAttribute("data-font", id);
+            elementCache.currentFontId = id;
+            const font = FONT_BY_ID.get(id) || FONTS[0];
+            getElement("font-btn").textContent = "[ Font: " + font.label + " ]";
+            localStorage.setItem("font", id);
+            ensureFontLoaded(id);                  // make sure the selected font loads
+            ensureFontLoaded(getNextFontId());     // preload the next one too (instant on the next click)
+        }
+
+        function cycleFont() {
+            setFont(getNextFontId());
+        }
+
+        // Download the next font when the cursor enters/leaves the button
+        function prefetchNextFont() {
+            ensureFontLoaded(getNextFontId());
         }
 
         function toggleTheme() {
-            const body = document.body;
-            const currentTheme = body.getAttribute("data-theme");
-            const next = currentTheme === "light" ? "dark" : "light";
-            body.setAttribute("data-theme", next);
-            localStorage.setItem("theme", next);
+            const isLight = document.body.getAttribute("data-theme") === "light";
+            const nextTheme = isLight ? "dark" : "light";
+            document.body.setAttribute("data-theme", nextTheme);
+            localStorage.setItem("theme", nextTheme);
         }
 
-        // Restore preferences
-        const savedTheme = localStorage.getItem("theme")
-            || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        (function () {
+            // instead of writing style on every resize event: rAF + change check
+            let lastHeight = -1;
+            let frameRequestId = 0;
+            function applyViewportHeight() {
+                frameRequestId = 0;
+                const height = window.innerHeight;
+                if (height === lastHeight) return;
+                lastHeight = height;
+                document.documentElement.style.setProperty('--vh', height + 'px');
+            }
+            function queueViewportUpdate() {
+                if (!frameRequestId) frameRequestId = requestAnimationFrame(applyViewportHeight);
+            }
+            applyViewportHeight();
+            window.addEventListener('resize', queueViewportUpdate, {passive: true});
+            window.addEventListener('orientationchange', queueViewportUpdate, {passive: true});
+        })();
+
+        const isDarkPreferred = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const savedTheme = localStorage.getItem("theme") || (isDarkPreferred ? "dark" : "light");
         document.body.setAttribute("data-theme", savedTheme);
-        setLang(localStorage.getItem("lang") || "tr");
+        const savedFont = localStorage.getItem("font") || "jetbrains";
+        // the first load already fetches this font via Google Fonts → treat it as warm
+        fontLoadCache.set(savedFont, Promise.resolve());
+        setFont(savedFont);
+        renderManifesto(localStorage.getItem("lang") || "tr");
+
+        // Button:hover/focus → prefetch the next font (ready on click)
+        (function () {
+            const fontButton = getElement("font-btn");
+            ["mouseenter", "focus"].forEach((eventName) =>
+                fontButton.addEventListener(eventName, prefetchNextFont, {passive: true}));
+            // if the cursor is already on the button, run the first prefetch too
+            if (document.activeElement === fontButton) prefetchNextFont();
+        })();
+
+        // Warm the first 4 fonts in the background while the network is idle
+        (function () {
+            const warmFonts = () => ["sfmono", "cascadia", "firacode", "hack"].forEach(ensureFontLoaded);
+            if ("requestIdleCallback" in window) requestIdleCallback(warmFonts, {timeout: 4000});
+            else setTimeout(warmFonts, 2500);
+        })();
     </script>
 </body>
 </html>
