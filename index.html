@@ -124,8 +124,8 @@
         body[data-font="martian"] { --mono:"Martian Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
         body[data-font="space"] { --mono:"Space Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
         [data-theme="dark"] { --bg-color:#0d1117; --text-color:#c9d1d9; --container-bg:#161b22; --border-color:#30363d; --accent-color:#58a6ff; --dim-text:#8b949e; --code-bg:#1f242c; }
-        body { background-color:var(--bg-color); color:var(--text-color); font-family:var(--mono); margin:0; padding:clamp(14px, 4vw, 24px); display:flex; justify-content:center; min-height:var(--vh); min-height:100dvh; overflow-x:hidden; }
-        .terminal-container { width:100%; max-width:min(900px, 100%); background-color:var(--container-bg); border:1px solid var(--border-color); border-radius:6px; box-shadow:0 8px 24px rgba(0,0,0,0.1); padding:clamp(16px, 2.4vw, 28px); box-sizing:border-box; margin:auto; }
+        body { background-color:var(--bg-color); color:var(--text-color); font-family:var(--mono); margin:0; padding:clamp(16px, 4.5vw, 24px); display:flex; justify-content:center; min-height:var(--vh); min-height:100dvh; overflow-x:hidden; }
+        .terminal-container { width:100%; max-width:min(900px, 100%); background-color:var(--container-bg); border:1px solid var(--border-color); border-radius:6px; box-shadow:0 8px 24px rgba(0,0,0,0.1); padding:clamp(18px, 2.4vw, 32px); box-sizing:border-box; margin:auto; }
         .site-header { display:block; }
         .terminal-header { display:flex; flex-direction:column; gap:clamp(8px, 1.2vw, 10px); margin-bottom:clamp(14px, 2.5vw, 20px); font-size:clamp(11.5px, 1.5vw, 14px); }
         .header-controls { display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; margin-left:auto; padding-bottom:clamp(8px, 1.4vw, 12px); border-bottom:1px solid var(--border-color); width:100%; }
@@ -167,7 +167,7 @@
         .status-sep { margin:0 clamp(4px,1vw,8px); opacity:.45; }
         .status-right { white-space:nowrap; margin-left:auto; }
         .prompt-line { min-width:0; overflow-wrap:anywhere; }
-        .manifesto-content { font-size:clamp(12.5px, 1.55vw, 14px); line-height:1.5; white-space:pre-line; margin-bottom:clamp(16px, 3vw, 24px); }
+        .manifesto-content { font-size:clamp(13px, 1.65vw, 15px); max-width:640px; line-height:1.5; white-space:pre-line; margin-bottom:clamp(16px, 3vw, 24px); }
         .manifesto-content a { color:var(--accent-color); text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1px; }
         .manifesto-content a:hover { text-decoration-thickness:2px; }
         .terminal-footer { border-top:1px solid var(--border-color); padding-top:clamp(12px, 2vw, 16px); display:flex; justify-content:space-between; align-items:center; font-size:clamp(11px, 1.4vw, 13px); flex-wrap:wrap; gap:10px; }
@@ -194,7 +194,7 @@
         .font-credits a:hover { text-decoration:underline; }
 
         /* (signoff line removed) */
-        .manifesto-content p { overflow-wrap:break-word; }
+        .manifesto-content p { overflow-wrap:break-word; text-align:justify; text-indent:1.5em; }
         @media (max-width:600px) {
             .status-note { display:none; }
             .terminal-footer { flex-direction:column; align-items:flex-start; }
@@ -204,7 +204,7 @@
             .status-right { white-space:normal; }
             .header-controls { width:100%; }
             .manifesto-content p { text-align:left; text-indent:1em; }
-            .terminal-container { border-radius:0; margin:0 calc(-1 * clamp(10px, 2.5vw, 20px)); width:calc(100% + 2 * clamp(10px, 2.5vw, 20px)); max-width:none; border-left:0; border-right:0; }
+            .terminal-container { border-radius:0; margin:0 calc(-1 * clamp(16px, 4.5vw, 24px)); width:calc(100% + 2 * clamp(16px, 4.5vw, 24px)); max-width:none; border-left:0; border-right:0; }
         }
         @media (max-height:560px) and (orientation:landscape) {
             body { align-items:flex-start; }
@@ -320,7 +320,7 @@
 
         const MANIFESTO_TR = `13 yaşından beri iş hayatıyla ve makinelerle iç içeyim; 1998'den bu yana ise ilk günkü çocuksu merakla, tutkuyla ve kesintisiz bir disiplinle kod yazıyorum. 30 yıla yakın bir süredir yazılımın, sistem mimarilerinin, veritabanlarının ve ağların en derin mutfağındayım. Atari 2600 klonları ve 486 DX ile başlayan yolculuğum, 90'ların sonundan bugüne dek farklı ölçeklerdeki kurumlarda yürüttüğüm projelerle köklü bir pratiğe dönüştü. Yalnızca soyut kodlar üreten biri değilim; ilişkisel ve NoSQL veritabanlarından büyük veri katmanlarına, sunucu konfigürasyonlarından sistem yönetimine kadar her türlü dağıtık veya tekil altyapıyı tek başına kurar, sağlamlaştırır ve ayağa kaldırırım. Bugün ise blok zinciri, kripto paralar, dağıtık ağlar, akıllı ajan mimarileri, yapay zekâ, ajan tabanlı entegrasyonlar, yerel LLM çözümleri ve modern mimari yaklaşımları alanında uçtan uca çözümler üretmeye halen büyük bir heyecan ve azimle devam ediyorum.
 
-Zihinsel ve mesleki birikimimin temelinde net bir düstur yatar: <strong>Akademik teori ile mutfaktan gelen pratik mühendisliği (praxis) aynı potada eriten, multidisipliner ve interdisipliner bir mimari anlayış</strong>. Bilgiyi kendine hapseden ya da malumatfuruşluk taslayan bir tavrı hiçbir dönem benimsemedim. Kodlama, hata ayıklama, mimari tasarım... Sahada elini kirletmeden teoriden konuşanlardan hiçbir zaman olmadım. Anadolu Üniversitesi'nde İktisat ön lisansını tamamladım, ardından İşletme lisansını bitirdim. Sonrasında Mühendislik Yönetimi yüksek lisansımı tamamladım. 2015'te yayımlanan <em>Büyük Veri ve Semantik</em> adlı kitabımın ardından Marmara Üniversitesi'nde Bilişim yüksek lisansına başladım ve halen tez aşamasındayım. Edindiğim teorik derinliği, 2019'da kaleme aldığım ve çeşitli mecralarda neşredilen transhümanizm ve dijitalleşme odaklı makalelerimle, ayrıca televizyon ekranlarında yürüttüğüm teknoloji ve dijital determinizm üzerine fikrî söyleşilerle kamusal alana taşıdım. Zira hakiki bilginin, ancak paylaşıldıkça ve diyalektik bir süzgeçten geçtikçe kıymet kazanacağına inanıyorum.
+Zihinsel ve mesleki birikimimin temelinde net bir düstur yatar: <strong>Akademik teori ile mutfaktan gelen pratik mühendisliği (praxis) aynı potada eriten, multidisipliner ve interdisipliner bir mimari anlayış</strong>. Bilgiyi kendine hapseden ya da malumatfuruşluk taslayan bir tavrı hiçbir dönem benimsemedim. Kodlama, hata ayıklama, mimari tasarım... Sahada elini kirletmeden teoriden konuşanlardan hiçbir zaman olmadım. Anadolu Üniversitesi'nde İktisat ön lisansını tamamladım, ardından İşletme lisansını ve Mühendislik Yönetimi yüksek lisansını bitirdim. 2015'te yayımlanan <em>Büyük Veri ve Semantik</em> adlı kitabımın ardından Marmara Üniversitesi'nde Bilişim yüksek lisansına başladım ve halen tez aşamasındayım. Edindiğim teorik derinliği, 2019'da kaleme aldığım ve çeşitli mecralarda neşredilen transhümanizm ve dijitalleşme odaklı makalelerimle, ayrıca televizyon ekranlarında yürüttüğüm teknoloji ve dijital determinizm üzerine fikrî söyleşilerle kamusal alana taşıdım. Zira hakiki bilginin, ancak paylaşıldıkça ve diyalektik bir süzgeçten geçtikçe kıymet kazanacağına inanıyorum.
 
 Teknolojiye ve dijital evrene yalnızca araçsal bir rasyonaliteyle yaklaşmıyorum; bilişimin insan zihni, toplumsal akışlar, simülakrlar ve varoluş üzerindeki dönüştürücü etkilerini sorgulayan felsefi metinler ve denemeler kaleme alıyorum. Kadim felsefe literatüründen süzülen kavramlarla modern dijital çağın açmazlarını okuyorum; bu zihinsel sancıları kelimelerin sınırlarının ötesine taşıyorum.
 
@@ -330,7 +330,7 @@ Anlattığım bu pratiği açık kaynak projelerle de somutlaştırıyorum. Akad
 
         const MANIFESTO_EN = `Since I was 13, I’ve been immersed in working life and machinery. And since 1998, I’ve been writing code with the same childlike curiosity, passion, and unwavering discipline I had on day one. For nearly three decades, I’ve been deep in the inner workings of software, system architecture, databases, and networks. What began with Atari 2600 clones and the 486 DX grew into a substantial body of hands-on experience through projects I’ve led at organizations of every scale, from the late ’90s to the present. I’m not someone who merely produces abstract code: from relational and NoSQL databases to big data layers, from server configuration to systems administration, I build, harden, and bring online all kinds of distributed and standalone infrastructure on my own. Today, I’m still driven by the same excitement and determination as I develop end-to-end solutions in blockchain, cryptocurrencies, distributed networks, intelligent-agent architectures, AI, agent-based integrations, local LLM solutions, and modern architectural approaches.
 
-At the heart of my intellectual and professional life is a clear guiding principle: <strong>a multidisciplinary and interdisciplinary approach to architecture that brings academic theory and hands-on engineering praxis into the same crucible</strong>. I’ve never subscribed to an attitude of hoarding knowledge or flaunting erudition. Coding, debugging, architectural design... I’ve never been one to talk theory without getting my hands dirty in the field. I completed my associate degree in Economics at Anadolu University, then finished my bachelor’s degree in Business. After that, I completed a master’s degree in Engineering Management. Following the publication of my 2015 book <em>Big Data and Semantics</em>, I began a master’s program in Information Systems at Marmara University, where I am currently working on my thesis. I’ve brought that theoretical depth into the public sphere through articles on transhumanism and digitalization — written in 2019 and published across various outlets — as well as through television conversations about technology and digital determinism. For I believe genuine knowledge gains value only when it is shared and tested through dialectical exchange.
+At the heart of my intellectual and professional life is a clear guiding principle: <strong>a multidisciplinary and interdisciplinary approach to architecture that brings academic theory and hands-on engineering praxis into the same crucible</strong>. I’ve never subscribed to an attitude of hoarding knowledge or flaunting erudition. Coding, debugging, architectural design... I’ve never been one to talk theory without getting my hands dirty in the field. I completed my associate degree in Economics at Anadolu University, then finished my bachelor’s degree in Business and my master’s degree in Engineering Management. Following the publication of my 2015 book <em>Big Data and Semantics</em>, I began a master’s program in Information Systems at Marmara University, where I am currently working on my thesis. I’ve brought that theoretical depth into the public sphere through articles on transhumanism and digitalization — written in 2019 and published across various outlets — as well as through television conversations about technology and digital determinism. For I believe genuine knowledge gains value only when it is shared and tested through dialectical exchange.
 
 I don’t approach technology and the digital universe through instrumental rationality alone; I write philosophical texts and essays that question computing’s transformative effects on the human mind, social currents, simulacra, and existence itself. I read the dilemmas of the modern digital age through concepts distilled from the canon of classical philosophy, and carry these intellectual struggles beyond the limits of words.
 
@@ -396,7 +396,7 @@ I also give this practice tangible form through open-source projects. You can fi
                 const text = language === "tr" ? MANIFESTO_TR : MANIFESTO_EN;
                 html = text
                     .split(/\n\n+/)
-                    .map((paragraph) => '<p style="text-indent:1.5em; margin:0 0 1.8em 0; text-align:justify">' + paragraph + '</p>')
+                    .map((paragraph) => '<p style="margin:0 0 1.8em 0">' + paragraph + '</p>')
                     .join("");
                 manifestoHtmlCache[language] = html;
             }
