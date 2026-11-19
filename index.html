@@ -197,7 +197,10 @@
         .font-credits a:hover { text-decoration:underline; }
 
         /* (signoff line removed) */
-        .manifesto-content p { overflow-wrap:break-word; text-align:left; text-indent:1.5em; }
+        .manifesto-content p { overflow-wrap:break-word; text-align:left; text-indent:1.5em; hyphens:auto; -webkit-hyphens:auto; }
+        /* Justified edges read well on wide screens; on narrow ones justify
+           stretches the few word-spaces too far, so mobile stays left-aligned */
+        @media (min-width:900px) { .manifesto-content p { text-align:justify; } }
         @media (max-width:600px) {
             .terminal-footer { flex-direction:column; align-items:flex-start; }
             .channels { margin-top:5px; flex-wrap:nowrap; justify-content:space-between; width:100%; }
