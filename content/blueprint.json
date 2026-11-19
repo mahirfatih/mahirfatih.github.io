@@ -12,7 +12,8 @@
     "manifestoHeading": "Manifesto",
     "contactHeading": "İletişim",
     "switchShort": "Terminal →",
-    "switchLabel": "Terminal tasarımına geç"
+    "switchLabel": "Terminal tasarımına geç",
+    "heroNote": "ÖLÇEK 1:1 · REV 2026.11"
   },
   "en": {
     "sheetLine": "BLUEPRINT 01 · REV 2026.11 · 1:1",
@@ -27,6 +28,7 @@
     "manifestoHeading": "Manifesto",
     "contactHeading": "Contact",
     "switchShort": "Terminal →",
-    "switchLabel": "Switch to the terminal design"
+    "switchLabel": "Switch to the terminal design",
+    "heroNote": "SCALE 1:1 · REV 2026.11"
   }
 }
