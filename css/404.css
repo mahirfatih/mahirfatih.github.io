@@ -1,0 +1,140 @@
+/* ==========================================================================
+   404.css — retro terminal penceresi (yalnızca 404)
+   base.css + terminal.css üzerine gelir; index/blueprint'i etkilemez.
+   ========================================================================== */
+
+/* ---------- retro çıktı renkleri (tema uyumlu) ---------- */
+html {
+    --r-green: #1a7f37;
+    --r-red: #cf2222;
+    --r-cyan: #0969da;
+    --r-dim: #57606a;
+    --r-bar: #eaeef2;
+    --r-scan: rgba(0, 0, 0, .035);
+}
+html[data-theme="dark"] {
+    --r-green: #3fb950;
+    --r-red: #f85149;
+    --r-cyan: #39c5cf;
+    --r-dim: #8b949e;
+    --r-bar: #21262d;
+    --r-scan: rgba(0, 0, 0, .16);
+}
+
+/* ---------- pencere ---------- */
+.win {
+    width: 100%;
+    max-width: min(860px, 100%);
+    margin: auto;
+    background-color: var(--container-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .14);
+    overflow: hidden;
+}
+
+.win-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 14px;
+    background: var(--r-bar);
+    border-bottom: 1px solid var(--border-color);
+}
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex: none;
+}
+.dot-r { background: #ff5f56; }
+.dot-y { background: #ffbd2e; }
+.dot-g { background: #27c93f; }
+.win-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(11px, 1.5vw, 13px);
+    color: var(--r-dim);
+    white-space: nowrap;
+    max-width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ---------- gövde ---------- */
+.win-body {
+    padding: clamp(18px, 3vw, 32px) clamp(16px, 3vw, 30px);
+    font-size: clamp(12px, 1.55vw, 14.5px);
+    line-height: 1.75;
+    overflow-wrap: anywhere;
+}
+
+.ln { margin: 0; }
+.dim { color: var(--r-dim); }
+.err { color: var(--r-red); }
+.cmd { color: var(--r-green); }
+.ps1 { color: var(--accent-color); font-weight: 700; }
+
+.resp { margin: .35em 0 .35em; }
+
+/* ---------- ASCII art ---------- */
+.art {
+    margin: 18px 0 6px;
+    color: var(--r-green);
+    font-family: var(--font);
+    font-size: clamp(9px, 3.2vw, 20px);
+    line-height: 1.15;
+    white-space: pre;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* ---------- başlık + mesaj ---------- */
+.headline {
+    margin: 4px 0 2px;
+    color: var(--r-red);
+    font-weight: 700;
+    letter-spacing: .08em;
+    font-size: clamp(13px, 1.9vw, 17px);
+}
+.lead { margin: 0 0 6px; }
+
+/* ---------- komut listesi (bağlantılar) ---------- */
+.cmds {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    margin-top: 4px;
+}
+.cmds a { color: var(--accent-color); text-decoration: none; border-bottom: 1px solid transparent; }
+.cmds a:hover { border-bottom-color: currentColor; }
+
+/* ---------- CRT scanline (ince, isteğe bağlı) ---------- */
+.crt::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999;
+    background: repeating-linear-gradient(
+        0deg,
+        var(--r-scan) 0,
+        var(--r-scan) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+}
+@media (prefers-reduced-motion: reduce) {
+    .crt::after { display: none; }
+}
+
+.noscript-note {
+    margin: 0 0 10px;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--r-dim);
+    font-size: clamp(11px, 1.4vw, 13px);
+}
