@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="tr" data-lang="tr" data-theme="light" data-font="plexsans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahir Fatih Ünal — Blueprint</title>
+    <meta name="description" content="Mahir Fatih Ünal — yazılım mimarı. 1995'ten beri iş hayatında, 1998'den beri kod yazıyor; dağıtık sistemler, veritabanları, blok zinciri, yapay zekâ ve yerel LLM çözümleri.">
+    <meta name="author" content="Mahir Fatih Ünal">
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#e8edf0" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f2a44" media="(prefers-color-scheme: dark)">
+    <link rel="canonical" href="https://mahirfatih.com/blueprint.html">
+    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/images/favicon.png" sizes="512x512" type="image/png">
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Mahir Fatih Ünal">
+    <meta property="og:title" content="Mahir Fatih Ünal — Blueprint">
+    <meta property="og:description" content="1998'den beri kod yazan bir mimar: dağıtık sistemler, veritabanları, blok zinciri, yapay zekâ ve yerel LLM çözümleri.">
+    <meta property="og:url" content="https://mahirfatih.com/blueprint.html">
+    <meta property="og:image" content="https://mahirfatih.com/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Mahir Fatih Ünal — Blueprint">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mahir Fatih Ünal — Blueprint">
+    <meta name="twitter:description" content="1998'den beri kod yazan bir mimar: dağıtık sistemler, veritabanları, blok zinciri, yapay zekâ ve yerel LLM çözümleri.">
+    <meta name="twitter:image" content="https://mahirfatih.com/images/og-image.png">
+
+    <!-- early boot: apply stored theme/lang/font before first paint (no FOUC) -->
+    <script>
+    try {
+        var d = document.documentElement;
+        var t = localStorage.getItem('theme');
+        d.dataset.theme = (t === 'light' || t === 'dark') ? t
+            : (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        var l = localStorage.getItem('lang');
+        if (l === 'en' || l === 'tr') { d.dataset.lang = l; d.lang = l; }
+        var f = localStorage.getItem('font');
+        if (f) d.dataset.font = f;
+    } catch (e) { /* private mode: defaults stay */ }
+    </script>
+
+    <!-- self-hosted: no third-party request on first paint -->
+    <link rel="preload" href="/fonts/plexsans-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/plexsans-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/plexcond-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/blueprint.css">
+
+    <script defer src="/js/i18n.js"></script>
+    <script defer src="/js/fonts.js"></script>
+    <script defer src="/js/blueprint.js"></script>
+</head>
+<body data-sections="ui,profile,manifesto,contact,blueprint">
+    <a class="skip-link" href="#main" data-i18n="ui.skipLink">İçeriğe geç</a>
+
+    <div class="sheet">
+        <div class="frame">
+
+            <div class="bar">
+                <span class="who" data-i18n="profile.name">Mahir Fatih Ünal</span>
+                <span class="meta" data-i18n="blueprint.sheetLine">BLUEPRINT 01 · REV 2026.11 · 1:1</span>
+                <div class="controls" role="group" data-i18n-aria="blueprint.controls" aria-label="Kontroller">
+                    <button type="button" data-lang-btn="tr" aria-pressed="true">TR</button>
+                    <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+                    <button type="button" id="theme-btn" aria-pressed="false"
+                            data-i18n="blueprint.theme">Açık / Koyu</button>
+                    <button type="button" id="font-btn"
+                            aria-label="Yazı tipini değiştir [ Plex Sans ]">[ Plex Sans ]</button>
+                    <a class="switch" href="/" data-i18n="blueprint.switchShort"
+                       data-i18n-aria="blueprint.switchLabel">Terminal →</a>
+                </div>
+            </div>
+
+            <noscript>
+                <div class="noscript-note">
+                    <strong>Bu sayfa JavaScript ile render ediliyor.</strong> İçeriğin tamamı için JavaScript'i açın.<br>
+                    <strong>This page renders with JavaScript.</strong> Enable JavaScript to read the manifesto.<br>
+                    <a href="https://github.com/mahirfatih" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+                    <a href="https://linkedin.com/in/mahirfatih" target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
+                    <a href="https://scholar.google.com/citations?user=o7zAj_cAAAAJ" target="_blank" rel="noopener noreferrer">Scholar</a> ·
+                    <a href="mailto:irtibat@mahirfatih.com">Email</a> ·
+                    <a href="/">Terminal</a>
+                </div>
+            </noscript>
+
+            <main id="main">
+
+                <!-- ---------- title block ---------- -->
+                <section class="hero">
+                    <h1><span data-i18n="profile.name">Mahir Fatih Ünal</span></h1>
+                    <dl class="tb">
+                        <div>
+                            <dt data-i18n="blueprint.roleLabel">Meslek</dt>
+                            <dd data-i18n="profile.role">Yazılım mimarı</dd>
+                        </div>
+                        <div>
+                            <dt data-i18n="blueprint.industryLabel">İş hayatında</dt>
+                            <dd class="big"><span id="years-in-industry">31</span> <span data-i18n="blueprint.industryValue">yıl</span></dd>
+                        </div>
+                        <div>
+                            <dt data-i18n="blueprint.codeLabel">Kod yazıyor</dt>
+                            <dd data-i18n="blueprint.sinceCode">1998’den beri</dd>
+                        </div>
+                        <div>
+                            <dt data-i18n="blueprint.languagesLabel">Dil</dt>
+                            <dd>TR · EN</dd>
+                        </div>
+                    </dl>
+                </section>
+
+                <!-- ---------- dimension line ---------- -->
+                <section class="dim" aria-label="1995 — 1998 — bugün">
+                    <svg viewBox="0 0 900 96" role="img">
+                        <title data-i18n="blueprint.axisTitle">1995’te iş hayatı, 1998’de kod, bugüne kadar</title>
+                        <path class="ln" d="M20 40H880M20 28V52M880 28V52M20 40l9-5v10zM880 40l-9-5v10z"/>
+                        <path class="ln" d="M165 30V50"/>
+                        <path class="ac" pathLength="1" d="M20 40H880"/>
+                        <circle cx="20" cy="40" r="5" fill="var(--accent)"/>
+                        <circle cx="165" cy="40" r="5" fill="var(--accent)"/>
+                        <circle cx="880" cy="40" r="5" fill="var(--accent)"/>
+                        <text x="20" y="74">1995</text>
+                        <text x="165" y="74" text-anchor="middle">1998</text>
+                        <text x="880" y="74" text-anchor="end"><tspan id="dimension-end-year">2026</tspan></text>
+                        <text class="m" x="92" y="22" text-anchor="middle"><tspan data-i18n="blueprint.axisWork">iş hayatı</tspan></text>
+                        <text class="m" x="522" y="22" text-anchor="middle"><tspan data-i18n="blueprint.axisWorkCode">iş hayatı + kod</tspan></text>
+                    </svg>
+                </section>
+
+                <!-- ---------- manifesto ---------- -->
+                <h2>
+                    <span data-i18n="blueprint.manifestoHeading">Manifesto</span>
+                    <span class="idx">01</span>
+                </h2>
+                <details class="notes">
+                    <summary>
+                        <span data-i18n="blueprint.manifestoSummary">Uzun okuma — aç</span>
+                        <span class="hint" data-i18n="blueprint.manifestoHint">5 paragraf</span>
+                    </summary>
+                    <div class="prose">
+                        <p data-i18n-html="manifesto.0"></p>
+                        <p data-i18n-html="manifesto.1"></p>
+                        <p data-i18n-html="manifesto.2"></p>
+                        <p data-i18n-html="manifesto.3"></p>
+                        <p data-i18n-html="manifesto.4"></p>
+                    </div>
+                </details>
+
+                <!-- ---------- contact ---------- -->
+                <h2>
+                    <span data-i18n="blueprint.contactHeading">İletişim</span>
+                    <span class="idx">02</span>
+                </h2>
+                <nav class="links" data-i18n-aria="contact.ariaLabel" aria-label="İletişim kanalları">
+                    <a href="mailto:irtibat@mahirfatih.com">Email <span>irtibat@mahirfatih.com</span></a>
+                    <a href="https://linkedin.com/in/mahirfatih" target="_blank" rel="noopener noreferrer">LinkedIn <span>/in/mahirfatih</span></a>
+                    <a href="https://github.com/mahirfatih" target="_blank" rel="noopener noreferrer">GitHub <span>mahirfatih</span></a>
+                    <a href="https://scholar.google.com/citations?user=o7zAj_cAAAAJ" target="_blank" rel="noopener noreferrer">Scholar <span data-i18n="contact.scholarLabel">yayınlar</span></a>
+                    <a href="https://x.com/mahirfatihunal" target="_blank" rel="noopener noreferrer">X <span>@mahirfatihunal</span></a>
+                    <a href="https://www.youtube.com/@mahirfatihunal" target="_blank" rel="noopener noreferrer">YouTube <span>@mahirfatihunal</span></a>
+                </nav>
+
+            </main>
+
+            <footer class="sheet-footer">
+                <span>mahirfatih.com · <span data-i18n="blueprint.sheetLine">BLUEPRINT 01 · REV 2026.11 · 1:1</span></span>
+                <span data-i18n="blueprint.footerNote">Bu sayfa JavaScript olmadan da okunur.</span>
+            </footer>
+
+        </div>
+    </div>
+</body>
+</html>
