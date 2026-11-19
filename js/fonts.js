@@ -1,7 +1,7 @@
 /* ==========================================================================
    fonts.js — ortak yazı tipi alt sistemi
-   26 yazı tipi, tek liste, tek localStorage anahtarı. Her iki tasarım de
-   aynı listeyi döner. Varsayılan sayfaya göre farklıdır (data-font).
+   26 yazı tipi, tek liste; her tasarım kendi seçimini ayrı anahtarla hatırlar.
+   Varsayılan tasarıma göre farklıdır (data-font) ve tema başına saklanır.
    ========================================================================== */
 (function () {
     'use strict';
@@ -48,6 +48,21 @@
         set: function (key, value) { try { localStorage.setItem(key, value); } catch (err) {} }
     };
 
+    // The font choice is remembered per design (terminal vs blueprint), so each
+    // design keeps its own default until the visitor changes it on that page.
+    var design = html.getAttribute('data-design') || 'default';
+    var FONT_KEY = 'font:' + design;
+    var LEGACY_KEY = 'font';
+
+    function storedFont() {
+        var value = store.get(FONT_KEY);
+        if (value) return value;
+        // one-time carry-over from the old single shared key, if present
+        var legacy = store.get(LEGACY_KEY);
+        if (legacy) { store.set(FONT_KEY, legacy); return legacy; }
+        return null;
+    }
+
     /* ---------------- loading ---------------- */
     var loadCache = Object.create(null);
 
@@ -93,7 +108,7 @@
         activeId = id;
         html.setAttribute('data-font', id);
         updateButton();
-        if (persist) store.set('font', id);
+        if (persist) store.set(FONT_KEY, id);
         ensureFontLoaded(id);   // make sure the selected face is usable
         // the NEXT face is never warmed eagerly: it downloads only on
         // hover/focus of the button (see bind), never on idle.
@@ -118,7 +133,7 @@
         if (window.Site && typeof Site.onChange === 'function') {
             Site.onChange(function () { updateButton(); });
         }
-        applyFont(store.get('font') || html.getAttribute('data-font') || 'jetbrains', false);
+        applyFont(storedFont() || html.getAttribute('data-font') || 'jetbrains', false);
     }
 
     if (document.readyState === 'loading') {
