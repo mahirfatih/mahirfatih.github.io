@@ -13,7 +13,9 @@
     "contactHeading": "İletişim",
     "switchShort": "Terminal →",
     "switchLabel": "Terminal tasarımına geç",
-    "heroNote": "ÖLÇEK 1:1 · REV 2026.11"
+    "heroNote": "ÖLÇEK 1:1 · REV 2026.11",
+    "scaleLabel": "Ölçek 1:1",
+    "notesLabel": "Genel Notlar"
   },
   "en": {
     "sheetLine": "BLUEPRINT 01 · REV 2026.11 · 1:1",
@@ -29,6 +31,8 @@
     "contactHeading": "Contact",
     "switchShort": "Terminal →",
     "switchLabel": "Switch to the terminal design",
-    "heroNote": "SCALE 1:1 · REV 2026.11"
+    "heroNote": "SCALE 1:1 · REV 2026.11",
+    "scaleLabel": "Scale 1:1",
+    "notesLabel": "General Notes"
   }
 }
