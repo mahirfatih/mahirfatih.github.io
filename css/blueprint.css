@@ -316,7 +316,7 @@ h2 .sub {
 }
 
 /* ==========================================================================
-   Print — pafta çıktısı (tema ve kontrollerden bağımsız, siyah-beyaz)
+   Print — blueprint sheet (theme- and control-independent, black & white)
    ========================================================================== */
 @media print {
     html, html[data-theme="dark"] {
