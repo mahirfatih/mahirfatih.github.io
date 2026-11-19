@@ -13,10 +13,7 @@
     "axisWork": "iş hayatı",
     "axisWorkCode": "iş hayatı + kod",
     "manifestoHeading": "Manifesto",
-    "manifestoSummary": "Uzun okuma — aç",
-    "manifestoHint": "5 paragraf",
     "contactHeading": "İletişim",
-    "footerNote": "Bu sayfa JavaScript olmadan da okunur.",
     "switchShort": "Terminal →",
     "switchLabel": "Terminal tasarımına geç"
   },
@@ -34,10 +31,7 @@
     "axisWork": "industry",
     "axisWorkCode": "industry + code",
     "manifestoHeading": "Manifesto",
-    "manifestoSummary": "Long read — open",
-    "manifestoHint": "5 paragraphs",
     "contactHeading": "Contact",
-    "footerNote": "This page reads fine without JavaScript.",
     "switchShort": "Terminal →",
     "switchLabel": "Switch to the terminal design"
   }

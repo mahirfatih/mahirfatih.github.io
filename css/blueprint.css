@@ -142,26 +142,14 @@ h2 {
 }
 h2 .idx { font-variant-numeric: tabular-nums; opacity: .7; }
 
-/* ---------- manifesto (collapsible) ---------- */
+/* ---------- manifesto ---------- */
 .notes {
     padding: 1.2rem clamp(1rem, 3vw, 2rem);
     border-bottom: 1px solid var(--line);
 }
-.notes summary {
-    cursor: pointer;
-    font: 500 1.05rem/1.4 var(--font-cond);
-    color: var(--accent);
-    min-height: 2.5rem;
-    display: flex; align-items: center; gap: .5rem; flex-wrap: wrap;
-    list-style: none;
-}
-.notes summary::-webkit-details-marker { display: none; }
-.notes summary::before { content: "+"; display: inline-block; width: 1.1em; font-weight: 600; }
-.notes[open] summary::before { content: "–"; }
-.notes summary .hint { color: var(--soft); font-weight: 400; font-size: .9rem; }
 .prose {
     max-width: 72ch;
-    margin: 1.3rem 0 0;
+    margin: 0;
     padding-left: clamp(.8rem, 2vw, 1.4rem);
     border-left: 2px solid var(--line);
 }
