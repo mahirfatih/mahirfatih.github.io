@@ -1,7 +1,6 @@
 {
   "tr": {
     "name": "Mahir Fatih",
-    "role": "Yazılım mimarı",
     "workStart": 1995,
     "codeStart": 1998,
     "languages": "TR · EN",
@@ -9,7 +8,6 @@
   },
   "en": {
     "name": "Mahir Fatih",
-    "role": "Software architect",
     "workStart": 1995,
     "codeStart": 1998,
     "languages": "TR · EN",
