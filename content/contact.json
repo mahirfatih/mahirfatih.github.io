@@ -1,0 +1,16 @@
+{
+  "tr": {
+    "heading": "İletişim",
+    "ariaLabel": "İletişim kanalları",
+    "prompt": "contact --channels",
+    "channelsNote": "Altı kanal, hepsi doğrudan",
+    "scholarLabel": "yayınlar"
+  },
+  "en": {
+    "heading": "Contact",
+    "ariaLabel": "Contact channels",
+    "prompt": "contact --channels",
+    "channelsNote": "Six channels, all direct",
+    "scholarLabel": "publications"
+  }
+}

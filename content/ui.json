@@ -1,0 +1,24 @@
+{
+  "tr": {
+    "skipLink": "İçeriğe geç",
+    "themeToggle": "Temayı değiştir",
+    "themeAria": "Tema [ Light / Dark ]",
+    "fontToggle": "Yazı tipini değiştir",
+    "langTr": "TR — Türkçe",
+    "langEn": "EN — İngilizce",
+    "switchLabel": "Blueprint tasarımına geç",
+    "switchShort": "Blueprint →",
+    "switchAria": "Blueprint tasarımına geç"
+  },
+  "en": {
+    "skipLink": "Skip to content",
+    "themeToggle": "Toggle theme",
+    "themeAria": "Theme [ Light / Dark ]",
+    "fontToggle": "Change font",
+    "langTr": "TR — Turkish",
+    "langEn": "EN — English",
+    "switchLabel": "Switch to the blueprint design",
+    "switchShort": "Blueprint →",
+    "switchAria": "Switch to the blueprint design"
+  }
+}
