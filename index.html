@@ -130,7 +130,7 @@
         .terminal-header { display:flex; flex-direction:column; gap:clamp(8px, 1.2vw, 10px); margin-bottom:clamp(14px, 2.5vw, 20px); font-size:clamp(11.5px, 1.5vw, 14px); }
         .header-controls { display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; margin-left:auto; padding-bottom:clamp(8px, 1.4vw, 12px); border-bottom:1px solid var(--border-color); width:100%; }
         .command { color:var(--accent-color); font-weight:bold; }
-        .theme-toggle, .lang-toggle { background:var(--code-bg); border:1px solid var(--border-color); color:var(--text-color); padding:clamp(5px, .8vw, 7px) clamp(9px, 1.4vw, 13px); border-radius:4px; cursor:pointer; font-family:inherit; font-size:clamp(11px, 1.3vw, 13px); white-space:nowrap; }
+        .theme-toggle, .lang-toggle { background:var(--code-bg); border:1px solid var(--border-color); color:var(--text-color); padding:clamp(7px, .8vw, 9px) clamp(10px, 1.4vw, 14px); border-radius:4px; cursor:pointer; font-family:inherit; font-size:clamp(11px, 1.3vw, 13px); white-space:nowrap; }
         .theme-toggle:hover, .lang-toggle:hover { border-color:var(--accent-color); }
         .lang-toggle .active { color:var(--accent-color); font-weight:bold; }
         .system-logs { font-size:clamp(11px, 1.4vw, 13px); color:var(--dim-text); margin-bottom:clamp(14px, 2.5vw, 20px); line-height:1.5; overflow-wrap:anywhere; }
@@ -156,9 +156,9 @@
             background:var(--code-bg);
             border:1px solid var(--border-color);
             border-radius:4px;
-            padding:clamp(6px,1.2vw,9px) clamp(10px,1.6vw,14px);
+            padding:clamp(8px,1.2vw,9px) clamp(10px,1.6vw,14px);
             margin-bottom:clamp(12px,2vw,16px);
-            font-size:clamp(9.5px,1.2vw,11px);
+            font-size:clamp(10.5px,1.2vw,11px);
             line-height:1.6;
             color:var(--dim-text);
             overflow-wrap:anywhere;
@@ -168,8 +168,8 @@
         .status-right { flex:0 0 auto; white-space:nowrap; margin-left:auto; }
         .status-left { flex:1 1 auto; min-width:0; }
         .prompt-line { min-width:0; overflow-wrap:anywhere; }
-        .manifesto-content { font-size:clamp(13px, 1.65vw, 15px); max-width:640px; line-height:1.8; white-space:pre-line; margin-bottom:clamp(16px, 3vw, 24px); }
-        .manifesto-content a { color:var(--accent-color); text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1px; }
+        .manifesto-content { font-size:clamp(13px, 1.65vw, 15px); max-width:none; line-height:1.8; white-space:pre-line; margin-bottom:clamp(16px, 3vw, 24px); }
+        .manifesto-content a { color:var(--accent-color); text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1px; padding:5px 1px; }
         .manifesto-content a:hover { text-decoration-thickness:2px; }
         .terminal-footer { border-top:1px solid var(--border-color); padding-top:clamp(12px, 2vw, 16px); display:flex; justify-content:space-between; align-items:center; font-size:clamp(11px, 1.4vw, 13px); flex-wrap:wrap; gap:10px; }
 
@@ -186,27 +186,36 @@
             font-style:italic;
             overflow-wrap:anywhere;
         }
-        .channels a { color:var(--accent-color); text-decoration:none; margin-left:7px; display:inline-block; padding:6px 4px; }
+        .channels a { color:var(--accent-color); text-decoration:none; margin-left:7px; display:inline-block; padding:11px 6px; }
         .channels a:first-child { margin-left:0; }
         .channels a:hover { text-decoration:underline; }
         .channels { display:flex; flex-wrap:wrap; gap:6px 0; min-width:0; }
         .terminal-footer > div { min-width:0; }
         .terminal-footer > div:first-child { overflow-wrap:anywhere; }
-        .font-credits { font-size:clamp(10px, 1.2vw, 12px); color:var(--dim-text); line-height:1.7; margin-bottom:clamp(14px, 2.5vw, 20px); overflow-wrap:anywhere; }
-        .font-credits a { color:var(--accent-color); text-decoration:none; }
+        .font-credits { font-size:clamp(11px, 1.2vw, 12px); color:var(--dim-text); line-height:1.7; margin-bottom:clamp(14px, 2.5vw, 20px); overflow-wrap:anywhere; }
+        .font-credits a { color:var(--accent-color); text-decoration:none; padding:6px 1px; }
         .font-credits a:hover { text-decoration:underline; }
 
         /* (signoff line removed) */
-        .manifesto-content p { overflow-wrap:break-word; text-align:justify; text-indent:1.5em; }
+        .manifesto-content p { overflow-wrap:break-word; text-align:left; text-indent:1.5em; }
         @media (max-width:600px) {
             .terminal-footer { flex-direction:column; align-items:flex-start; }
             .channels { margin-top:5px; flex-wrap:nowrap; justify-content:space-between; width:100%; }
-            .channels a { margin-left:0; margin-right:0; padding:6px 1px; font-size:clamp(9px, 2.55vw, 12px); }
+            .channels a { margin-left:0; margin-right:0; padding:9px 4px; font-size:clamp(10.5px, 2.8vw, 12px); }
             .terminal-header { flex-direction:column; align-items:flex-start; }
-            .status-right { white-space:normal; }
+            .status-right { white-space:normal; margin-left:0; align-self:flex-start; }
+            .status-bar { flex-direction:column; align-items:stretch; }
             .header-controls { width:100%; }
+            .lang-toggle, .theme-toggle { padding:11px 14px; font-size:12px; }
             .manifesto-content p { text-align:left; text-indent:1em; }
+            .manifesto-content a { padding:7px 1px; }
+            .font-credits a { padding:8px 1px; }
             .terminal-container { border-radius:0; margin:0 calc(-1 * clamp(16px, 4.5vw, 24px)); width:calc(100% + 2 * clamp(16px, 4.5vw, 24px)); max-width:none; border-left:0; border-right:0; }
+        }
+        /* Very narrow phones (≤400px): the 6 channel links cannot fit in one row — wrap instead of overflowing */
+        @media (max-width:400px) {
+            .channels { flex-wrap:wrap; justify-content:flex-start; gap:0 4px; width:auto; }
+            .channels a { margin-left:0; margin-right:0; padding:10px 5px; }
         }
         @media (max-height:560px) and (orientation:landscape) {
             body { align-items:flex-start; }
