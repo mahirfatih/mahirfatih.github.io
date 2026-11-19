@@ -1,6 +1,6 @@
 /* ==========================================================================
    fonts.js — ortak yazı tipi alt sistemi
-   18 yazı tipi, tek liste, tek localStorage anahtarı. Her iki tasarım de
+   26 yazı tipi, tek liste, tek localStorage anahtarı. Her iki tasarım de
    aynı listeyi döner. Varsayılan sayfaya göre farklıdır (data-font).
    ========================================================================== */
 (function () {
@@ -13,7 +13,7 @@
     // id, LABEL and the CSS stack must stay in sync with css/base.css
     var FONTS = [
         { id: 'jetbrains',  label: 'JetBrains',      stack: '"JetBrains Mono", ' + MONO },
-        { id: 'sfmono',     label: 'SF Mono',         stack: '"SFMono Liga", ' + MONO },
+        { id: 'cousine',    label: 'Cousine',         stack: '"Cousine", ' + MONO },
         { id: 'cascadia',   label: 'Cascadia',        stack: '"Cascadia Code", ' + MONO },
         { id: 'firacode',   label: 'Fira Code',       stack: '"Fira Code", ' + MONO },
         { id: 'hack',       label: 'Hack',            stack: '"Hack", ' + MONO },
@@ -28,6 +28,14 @@
         { id: 'sourcecode', label: 'Source Code',     stack: '"Source Code Pro", ' + MONO },
         { id: 'martian',    label: 'Martian Mono',    stack: '"Martian Mono", ' + MONO },
         { id: 'space',      label: 'Space Mono',      stack: '"Space Mono", ' + MONO },
+        { id: 'atkinson',   label: 'Atkinson',        stack: '"Atkinson Hyperlegible Mono", ' + MONO },
+        { id: 'intelone',   label: 'Intel One',       stack: '"Intel One Mono", ' + MONO },
+        { id: 'overpass',   label: 'Overpass',        stack: '"Overpass Mono", ' + MONO },
+        { id: 'fragment',   label: 'Fragment',        stack: '"Fragment Mono", ' + MONO },
+        { id: 'azeret',     label: 'Azeret',          stack: '"Azeret Mono", ' + MONO },
+        { id: 'recursive',  label: 'Recursive',       stack: '"Recursive Mono", ' + MONO },
+        { id: 'spline',     label: 'Spline',          stack: '"Spline Sans Mono", ' + MONO },
+        { id: 'notomono',   label: 'Noto Mono',       stack: '"Noto Sans Mono", ' + MONO },
         { id: 'plexsans',   label: 'Plex Sans',       stack: '"IBM Plex Sans", system-ui, -apple-system, sans-serif' },
         { id: 'plexcond',   label: 'Plex Sans Cond',  stack: '"IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif' }
     ];
