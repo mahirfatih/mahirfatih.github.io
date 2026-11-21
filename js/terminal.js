@@ -32,8 +32,55 @@
         var manifesto = (window.Site && Site.data.manifesto) || {};
         var paragraphs = manifesto[language];
         if (!Array.isArray(paragraphs)) return '';   // not loaded yet: do NOT cache
+        var isEn = language === 'en';
+        var t = isEn ? {
+            tagClosed: 'CORE PRINCIPLE · RECURSIVE ACCUMULATION',
+            tagOpen: 'CORE PRINCIPLE · A MODEL',
+            sub: 'each step carries what came before',
+            summary: 'details',
+            stepMath: 'mathematical form',
+            stepMeta: 'Human State',
+            legendMath: 'α — memory / damping (0 &lt; α &lt; 1) · β — trace of lived experience',
+            legendMeta1: '−T·ΔS — entropic cost',
+            legendMeta2: 'σ·ε(x) — unpredictability (chance/luck)',
+            explain: 'The pure formula models a human as an object that forgets nothing and never yields to entropy; yet a human, like everything in the universe, is subject to entropy. At the same time, a human neither stores everything the same way nor lives every moment with the same intensity.'
+        } : {
+            tagClosed: 'TEMEL İLKE · ÖZYİNELEMELİ BİRİKİM',
+            tagOpen: 'TEMEL İLKE · BİR MODEL',
+            sub: 'her adım, önceki birikimi taşır',
+            summary: 'detaylar',
+            stepMath: 'matematiksel hâli',
+            stepMeta: 'İnsan Hâli',
+            legendMath: 'α — hafıza / sönüm (0 &lt; α &lt; 1) · β — yaşanmışlıkların izi',
+            legendMeta1: '−T·ΔS — entropik maliyet',
+            legendMeta2: 'σ·ε(x) — öngörülemezlik (rastlantı/şans)',
+            explain: 'Saf formül, insanı hiçbir şeyi unutmayan, entropiye bile yenilmeyen kusursuz bir nesne gibi modeller; oysa insan da evrendeki her şey gibi entropiye tabidir. Üstelik insan, ne her şeyi aynı şekilde saklar ne de her ânı aynı şiddette yaşar. Bu yüzden insanın mevcut hâli mutlak bir toplam değil; geçmişinden geriye kalan sönümlenmiş hafızası ile yeni deneyimlerinin derinliğinden, varoluşun kaçınılmaz entropik yıpranmasının düşülmesi ve üzerine hayatın öngörülemez rastlantılarının eklenmesiyle her an yeniden şekillenen bir kemâlat hâlidir.'
+        };
+        var block =
+            '<div class="formula-block">' +
+                '<div class="formula-tag">' +
+                    '<span class="tag-closed">' + t.tagClosed + '</span>' +
+                    '<span class="tag-open">' + t.tagOpen + '</span>' +
+                '</div>' +
+                '<div class="formula">f(x) = f(x − y) + y</div>' +
+                '<div class="formula-sub">' + t.sub + '</div>' +
+                '<details class="formula-details">' +
+                    '<summary>' + t.summary + '</summary>' +
+                    '<div class="formula-detail-body">' +
+                        '<p class="formula-step">' + t.stepMeta + '</p>' +
+                        '<div class="formula formula-meta">f(x) ≈ α·f(x−y) + β·y − T·ΔS + σ·ε(x)</div>' +
+                        '<div class="formula-legend"><span>' + t.legendMeta1 + '</span><span>' + t.legendMeta2 + '</span></div>' +
+                        '<p class="formula-explain">' + t.explain + '</p>' +
+                    '</div>' +
+                '</details>' +
+            '</div>';
         // paragraphs already carry their own inline markup (<em>, <strong>, <a>)
-        var html = paragraphs.map(function (text) { return '<p>' + text + '</p>'; }).join('');
+        // Insert the core-principle formula block after the second paragraph.
+        var html = paragraphs.map(function (text, i) {
+            var p = '<p>' + text + '</p>';
+            if (i === 1) p += block;
+            return p;
+        }).join('');
         manifestoCache[language] = html;
         return html;
     }

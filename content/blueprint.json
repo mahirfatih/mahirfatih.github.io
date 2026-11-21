@@ -15,7 +15,17 @@
     "switchLabel": "Terminal tasarımına geç",
     "heroNote": "ÖLÇEK 1:1 · REV 2026.11",
     "scaleLabel": "Ölçek 1:1",
-    "notesLabel": "Genel Notlar"
+    "notesLabel": "Genel Notlar",
+    "formulaSub": "her adım, önceki birikimi taşır",
+    "formulaTagClosed": "TEMEL İLKE · ÖZYİNELEMELİ BİRİKİM",
+    "formulaTagOpen": "TEMEL İLKE · BİR MODEL",
+    "formulaDetails": "detaylar",
+    "formulaExplain": "Saf formül, insanı hiçbir şeyi unutmayan, entropiye bile yenilmeyen kusursuz bir nesne gibi modeller; oysa insan da evrendeki her şey gibi entropiye tabidir. Üstelik insan, ne her şeyi aynı şekilde saklar ne de her ânı aynı şiddette yaşar. Bu yüzden insanın mevcut hâli mutlak bir toplam değil; geçmişinden geriye kalan sönümlenmiş hafızası ile yeni deneyimlerinin derinliğinden, varoluşun kaçınılmaz entropik yıpranmasının düşülmesi ve üzerine hayatın öngörülemez rastlantılarının eklenmesiyle her an yeniden şekillenen bir kemâlat hâlidir.",
+    "formulaStepMath": "matematiksel hâli",
+    "formulaStepMeta": "İnsan Hâli",
+    "formulaLegendMath": "α — hafıza / sönüm (0 < α < 1) · β — yaşanmışlıkların izi",
+    "formulaLegendMeta1": "−T·ΔS — entropik maliyet",
+    "formulaLegendMeta2": "σ·ε(x) — öngörülemezlik (rastlantı/şans)"
   },
   "en": {
     "sheetLine": "BLUEPRINT 01 · REV 2026.11 · 1:1",
@@ -33,6 +43,16 @@
     "switchLabel": "Switch to the terminal design",
     "heroNote": "SCALE 1:1 · REV 2026.11",
     "scaleLabel": "Scale 1:1",
-    "notesLabel": "General Notes"
+    "notesLabel": "General Notes",
+    "formulaSub": "each step carries what came before",
+    "formulaTagClosed": "CORE PRINCIPLE · RECURSIVE ACCUMULATION",
+    "formulaTagOpen": "CORE PRINCIPLE · A MODEL",
+    "formulaDetails": "details",
+    "formulaExplain": "The pure formula models a human as an object that forgets nothing and never yields to entropy; yet a human, like everything in the universe, is subject to entropy. At the same time, a human neither stores everything the same way nor lives every moment with the same intensity.",
+    "formulaStepMath": "mathematical form",
+    "formulaStepMeta": "Human State",
+    "formulaLegendMath": "α — memory / damping (0 < α < 1) · β — trace of lived experience",
+    "formulaLegendMeta1": "−T·ΔS — entropic cost",
+    "formulaLegendMeta2": "σ·ε(x) — unpredictability (chance/luck)"
   }
 }
