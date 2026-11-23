@@ -15,7 +15,7 @@
       "> loading_publications: \"Büyük Veri ve Semantik\" (2015), \"Dijitalleşmenin Transhümanizme Etkisi\" (2019) + 40'ı aşkın atıf [OK]",
       "> status: active_builder, full_spectrum_coder_architect"
     ],
-    "quote": "Gregor Samsa bir sabah bunaltıcı düşlerden uyandığında, kendini dev bir LLM'nin bağlam (context) penceresinde milyarlarca parametreye ve sonsuz token akışına dönüşmüş olarak buldu.",
+    "quote": "Gregor Samsa bir sabah bunaltıcı düşlerden uyandığında, kendini dev bir LLM'nin bağlam (context) penceresinde milyarlarca parametreye ve sonsuz token akışına dönüşmüş hâlde buldu.",
     "prompt": "./run-manifesto.sh",
     "creditsLabel": "fonts"
   },
