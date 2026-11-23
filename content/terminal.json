@@ -2,13 +2,14 @@
   "tr": {
     "statusLeft": "ÖN SÜRÜM · AKTİF GELİŞTİRME<span class=\"status-note\"><span class=\"status-sep\">·</span>Final sürüm yok, sadece sürekli geliştirme.</span>",
     "statusRight": "Kod Adı: BACK TO BUILDING",
-    "manifestoVersion": "> manifesto v2026.11 · son rev: 2026-⁠11-⁠18 · TR/EN [OK]",
+    "manifestoVersion": "> manifesto v2026.11 · son rev: 2026-⁠11-⁠23 · TR/EN [OK]",
     "logLabel": "Sistem günlüğü",
     "quoteLabel": "Alıntı",
     "logs": [
       "> initializing_system_core... [OK]",
       "> first_contact_with_machines: age 13 — Atari 2600, 486 DX [OK]",
       "> loading_experience_stack: work_since_1995 (31+ yıl) · code_since_1998 (28 yıl) [OK]",
+      "> loading_early_archives: pcworld_&_pcnet_publications (2005-2006) [OK]",
       "> mounting_modules: systems, database_clusters, distributed_infra, blockchain, ai_agents, local_llm [OK]",
       "> loading_education: iktisat, işletme -> mühendislik_yönetimi (MSc) -> bilişim (MSc) [OK]",
       "> loading_publications: \"Büyük Veri ve Semantik\" (2015), \"Dijitalleşmenin Transhümanizme Etkisi\" (2019) + 40'ı aşkın atıf [OK]",
@@ -21,13 +22,14 @@
   "en": {
     "statusLeft": "PRE-RELEASE · ACTIVE DEVELOPMENT<span class=\"status-note\"><span class=\"status-sep\">·</span>Continuous development only.</span>",
     "statusRight": "Codename: BACK TO BUILDING",
-    "manifestoVersion": "> manifesto v2026.11 · last rev: 2026-⁠11-⁠18 · TR/EN [OK]",
+    "manifestoVersion": "> manifesto v2026.11 · last rev: 2026-⁠11-⁠23 · TR/EN [OK]",
     "logLabel": "System log",
     "quoteLabel": "Epigraph",
     "logs": [
       "> initializing_system_core... [OK]",
       "> first_contact_with_machines: age 13 — Atari 2600, 486 DX [OK]",
       "> loading_experience_stack: work_since_1995 (31+ years) · code_since_1998 (28 years) [OK]",
+      "> loading_early_archives: pcworld_&_pcnet_publications (2005-2006) [OK]",
       "> mounting_modules: systems, database_clusters, distributed_infra, blockchain, ai_agents, local_llm [OK]",
       "> loading_education: economics, business -> engineering_management (MSc) -> information_systems (MSc) [OK]",
       "> loading_publications: \"Big Data and Semantics\" (2015), \"The Effects of Digitization on Transhumanism\" (2019) + 40+ citations [OK]",
