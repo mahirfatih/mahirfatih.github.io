@@ -246,6 +246,7 @@ Release history lives in [GitHub Releases](https://github.com/mahirfatih/mahirfa
 | :--- | :--- | :--- |
 | [`v1.0.0`](https://github.com/mahirfatih/mahirfatih.github.io/releases) | `1b601db` | Before the restructure: single-file terminal design |
 | [`v2.0.0`](https://github.com/mahirfatih/mahirfatih.github.io/releases/tag/v2.0.0) | `d2d3795` | Two designs, shared JSON content, 26 self-hosted fonts |
+| [`v2.0.1`](https://github.com/mahirfatih/mahirfatih.github.io/releases/tag/v2.0.1) | `3eb0a31` | Runtime year/month tokens, manifesto revision, Plex Sans default on blueprint |
 
 ---
 

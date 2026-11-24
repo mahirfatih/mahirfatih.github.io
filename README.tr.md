@@ -246,6 +246,7 @@ Sürüm geçmişi [GitHub Releases](https://github.com/mahirfatih/mahirfatih.git
 | :--- | :--- | :--- |
 | [`v1.0.0`](https://github.com/mahirfatih/mahirfatih.github.io/releases) | `1b601db` | Yeniden yapılandırma öncesi: tek dosyalık terminal tasarımı |
 | [`v2.0.0`](https://github.com/mahirfatih/mahirfatih.github.io/releases/tag/v2.0.0) | `d2d3795` | İki tasarım, ortak JSON içerik, 26 self-hosted font |
+| [`v2.0.1`](https://github.com/mahirfatih/mahirfatih.github.io/releases/tag/v2.0.1) | `3eb0a31` | Çalışma anında yıl/ay token'ları, manifesto revizyonu, blueprint'te Plex Sans varsayılanı |
 
 ---
 
