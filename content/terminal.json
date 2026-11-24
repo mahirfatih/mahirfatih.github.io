@@ -1,7 +1,7 @@
 {
   "tr": {
     "statusLeft": "ÖN SÜRÜM · AKTİF GELİŞTİRME<span class=\"status-note\"><span class=\"status-sep\">·</span>Final sürüm yok, sadece sürekli geliştirme.</span>",
-    "statusRight": "Kod Adı: BACK TO BUILDING",
+    "statusRight": "Kod Adı: STILL BUILDING",
     "manifestoVersion": "> manifesto v2026.11 · son rev: 2026-⁠11-⁠24 · TR/EN [OK]",
     "logLabel": "Sistem günlüğü",
     "quoteLabel": "Alıntı",
@@ -22,7 +22,7 @@
   },
   "en": {
     "statusLeft": "PRE-RELEASE · ACTIVE DEVELOPMENT<span class=\"status-note\"><span class=\"status-sep\">·</span>Continuous development only.</span>",
-    "statusRight": "Codename: BACK TO BUILDING",
+    "statusRight": "Codename: STILL BUILDING",
     "manifestoVersion": "> manifesto v2026.11 · last rev: 2026-⁠11-⁠24 · TR/EN [OK]",
     "logLabel": "System log",
     "quoteLabel": "Epigraph",
