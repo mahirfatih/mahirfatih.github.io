@@ -36,15 +36,30 @@
         return String(now.getFullYear()) + '-' + ('0' + (now.getMonth() + 1)).slice(-2);
     }
 
+    function logTokens(language, month) {
+        var profileRoot = window.Site && Site.data.profile;
+        var profile = (profileRoot && (profileRoot[language] || profileRoot.tr)) || {};
+        var year = Number(month.slice(0, 4));
+        return {
+            NOW: month,
+            WORK_YEARS: String(year - (profile.workStart || 1995)),
+            CODE_YEARS: String(year - (profile.codeStart || 1998))
+        };
+    }
+
     function logsHtml(language) {
         var month = currentMonth();
-        var cacheKey = language + ':' + month;
+        var cacheKey = language + ':' + month;   // month includes the year: rollovers rebuild
         if (logsCache[cacheKey] !== undefined) return logsCache[cacheKey];
         var terminal = (window.Site && Site.data.terminal) || {};
         var lines = terminal[language] && terminal[language].logs;
         if (!Array.isArray(lines)) return '';   // not loaded yet: do NOT cache
+        var tokens = logTokens(language, month);
         var html = lines.map(function (line) {
-            return '<div>' + escapeHtml(line.replace(/\{NOW\}/g, month)) + '</div>';
+            var filled = line.replace(/\{(NOW|WORK_YEARS|CODE_YEARS)\}/g, function (_, key) {
+                return tokens[key];
+            });
+            return '<div>' + escapeHtml(filled) + '</div>';
         }).join('');
         logsCache[cacheKey] = html;
         return html;

@@ -8,7 +8,7 @@
     "logs": [
       "> initializing_system_core... [OK]",
       "> first_contact_with_machines: age 13 — Atari 2600, 486 DX [OK]",
-      "> loading_experience_stack: work_since_1995 (31+ yıl) · code_since_1998 (28 yıl) [OK]",
+      "> loading_experience_stack: work_since_1995 ({WORK_YEARS}+ yıl) · code_since_1998 ({CODE_YEARS} yıl) [OK]",
       "> loading_early_archives: pcworld_&_pcnet_publications (2005-2006) [OK]",
       "> mounting_modules: systems, database_clusters, distributed_infra, blockchain, ai_agents, local_llm [OK]",
       "> loading_education: iktisat, işletme -> mühendislik_yönetimi (MSc) -> bilişim (MSc) [OK]",
@@ -29,7 +29,7 @@
     "logs": [
       "> initializing_system_core... [OK]",
       "> first_contact_with_machines: age 13 — Atari 2600, 486 DX [OK]",
-      "> loading_experience_stack: work_since_1995 (31+ years) · code_since_1998 (28 years) [OK]",
+      "> loading_experience_stack: work_since_1995 ({WORK_YEARS}+ years) · code_since_1998 ({CODE_YEARS} years) [OK]",
       "> loading_early_archives: pcworld_&_pcnet_publications (2005-2006) [OK]",
       "> mounting_modules: systems, database_clusters, distributed_infra, blockchain, ai_agents, local_llm [OK]",
       "> loading_education: economics, business -> engineering_management (MSc) -> information_systems (MSc) [OK]",
