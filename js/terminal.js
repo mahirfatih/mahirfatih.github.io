@@ -9,7 +9,8 @@
     function byId(id) { return document.getElementById(id); }
 
     /* ---------------- render cache ----------------
-       Built once per language; a language switch rebuilds, a re-render does not. */
+       Built once per language and month; a language switch or a month rollover
+       rebuilds, a plain re-render does not. */
     var logsCache = Object.create(null);
     var manifestoCache = Object.create(null);
 
@@ -17,13 +18,35 @@
         return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     }
 
+    // 'YYYY-MM' for the site's timezone, so every visitor sees the same month
+    // even if their local clock is still on the previous/next one.
+    function currentMonth() {
+        try {
+            var parts = new Intl.DateTimeFormat('en-US', {
+                timeZone: 'Europe/Istanbul', year: 'numeric', month: '2-digit'
+            }).formatToParts(new Date());
+            var year = '', month = '';
+            parts.forEach(function (part) {
+                if (part.type === 'year') year = part.value;
+                if (part.type === 'month') month = part.value;
+            });
+            if (year && month) return year + '-' + month;
+        } catch (e) { /* very old browser: use the local fallback below */ }
+        var now = new Date();
+        return String(now.getFullYear()) + '-' + ('0' + (now.getMonth() + 1)).slice(-2);
+    }
+
     function logsHtml(language) {
-        if (logsCache[language] !== undefined) return logsCache[language];
+        var month = currentMonth();
+        var cacheKey = language + ':' + month;
+        if (logsCache[cacheKey] !== undefined) return logsCache[cacheKey];
         var terminal = (window.Site && Site.data.terminal) || {};
         var lines = terminal[language] && terminal[language].logs;
         if (!Array.isArray(lines)) return '';   // not loaded yet: do NOT cache
-        var html = lines.map(function (line) { return '<div>' + escapeHtml(line) + '</div>'; }).join('');
-        logsCache[language] = html;
+        var html = lines.map(function (line) {
+            return '<div>' + escapeHtml(line.replace(/\{NOW\}/g, month)) + '</div>';
+        }).join('');
+        logsCache[cacheKey] = html;
         return html;
     }
 
