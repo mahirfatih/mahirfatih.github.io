@@ -89,7 +89,7 @@ flowchart LR
 
 | Sayfa | Tasarım | Varsayılan font | Robots | Notlar |
 | :--- | :--- | :--- | :--- | :--- |
-| [`index.html`](./index.html) | Terminal | JetBrains Mono | `index, follow` | Durum çubuğu, 7 açılış logu, manifesto, alıntı, iletişim kanalları |
+| [`index.html`](./index.html) | Terminal | JetBrains Mono | `index, follow` | Durum çubuğu, açılış logları, manifesto, alıntı, iletişim kanalları |
 | [`blueprint.html`](./blueprint.html) | Blueprint | IBM Plex Sans | `noindex, follow` | Koordinat şeritleri, regmark'lar, ölçek çubuğu, yapışkan araç çubuğu, baskı sayfası |
 | [`404.html`](./404.html) | Retro CRT | JetBrains Mono | `noindex, follow` | Her zaman koyu, yalnızca `i18n.js` yükler (font seçici yok) |
 
@@ -151,9 +151,9 @@ mahirfatih.github.io/
 ├── sitemap.xml                # Yalnızca kök URL (lastmod elle güncellenir)
 ├── content/                   # İÇERİK katmanı — görünen her metin, TR + EN
 │   ├── profile.json           # ad, kimlik satırı, iş/kod başlangıç yılları, sürüm rozeti
-│   ├── terminal.json          # durum çubuğu, 7 açılış logu, alıntı, istemler, künye
+│   ├── terminal.json          # durum çubuğu, açılış logları, alıntı, istemler, künye
 │   ├── blueprint.json         # sayfa satırı, antet bloğu, eksen etiketleri, ölçek, notlar
-│   ├── manifesto.json         # 5 manifesto paragrafı (sınırlı satır içi HTML)
+│   ├── manifesto.json         # manifesto paragrafları (sınırlı satır içi HTML)
 │   ├── contact.json           # 6 doğrudan kanal + yayınlar bağlantısı
 │   └── ui.json                # iki tasarımın paylaştığı denetim/aria etiketleri
 ├── css/
@@ -194,6 +194,25 @@ Kurulacak, derlenecek, paketlenecek hiçbir şey yok. Gereksinim: bir tarayıcı
 ## ⚙️ Nasıl çalışıyor
 
 **Çalışma anında içerik.** Her sayfa ihtiyacı olan JSON'u `content/`'ten çeker ve `i18n.js` üzerinden basar. Metni orada düzenleyin — HTML'de kullanıcının göreceği metin (yedekler dışında) sabit yazılmaz.
+
+**Nerede ne yazılır? (tek kaynak)**
+
+| Görünen öğe | Dosya / anahtar | Not |
+| :--- | :--- | :--- |
+| Ad, kimlik satırı | `content/profile.json` → `name`, `identity` | TR/EN |
+| Sürüm rozeti (`v5.8.0-beta.1`) | `content/profile.json` → `version` | `index.html` yedeği yalnızca `v…`; sürümü JSON'dan değiştir |
+| Kod adı (`STILL BUILDING`) | `content/terminal.json` → `statusRight` | TR/EN |
+| Durum çubuğu sol metin | `content/terminal.json` → `statusLeft` | Küçük HTML yedeği var |
+| Manifesto rev tarihi | `content/terminal.json` → `manifestoVersion` | `son rev` / `last rev`; elle güncellenir |
+| Açılış logları | `content/terminal.json` → `logs[]` | `{NOW}` = ay, `{WORK_YEARS}` / `{CODE_YEARS}` = `profile.json` başlangıç yıllarından otomatik |
+| Alıntı | `content/terminal.json` → `quote` | TR/EN |
+| Manifesto paragrafları | `content/manifesto.json` → `tr[]` / `en[]` | Sınırlı `<strong>` / `<em>` kullanılabilir |
+| Blueprint antet / ölçek notu | `content/blueprint.json` → `sheetLine`, `heroNote` | `blueprint.html` içindeki statik yedekler de aynı olmalı |
+| Blueprint eksen bitiş yılı | otomatik — `js/blueprint.js` (`dimension-end-year`) | Elle yazılmaz |
+| Blueprint ilk fontu | `js/fonts.js` + `blueprint.html` early boot | Varsayılan Plex Sans, `font:blueprint` |
+| İletişim / yayınlar | `content/contact.json` | TR/EN |
+| Denetim ve aria etiketleri | `content/ui.json` | İki tasarımın paylaştığı metinler |
+| `sitemap.xml` `lastmod` | `sitemap.xml` | Elle güncellenir |
 
 **Depolama anahtarları** (hepsi isimlendirilmiş, hepsi `localStorage`):
 

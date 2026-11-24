@@ -89,7 +89,7 @@ flowchart LR
 
 | Page | Design | Default font | Robots | Notes |
 | :--- | :--- | :--- | :--- | :--- |
-| [`index.html`](./index.html) | Terminal | JetBrains Mono | `index, follow` | Status bar, 7 boot logs, manifesto, quote, contact channels |
+| [`index.html`](./index.html) | Terminal | JetBrains Mono | `index, follow` | Status bar, boot logs, manifesto, quote, contact channels |
 | [`blueprint.html`](./blueprint.html) | Blueprint | IBM Plex Sans | `noindex, follow` | Coordinate strips, regmarks, scale bar, sticky toolbar, print sheet |
 | [`404.html`](./404.html) | Retro CRT | JetBrains Mono | `noindex, follow` | Always dark, loads only `i18n.js` (no font picker) |
 
@@ -151,9 +151,9 @@ mahirfatih.github.io/
 ├── sitemap.xml                # Canonical root URL only (lastmod maintained by hand)
 ├── content/                   # THE content layer — every user-visible string, TR + EN
 │   ├── profile.json           # name, identity line, work/code start years, version badge
-│   ├── terminal.json          # status bar, 7 boot logs, quote, prompts, credits
+│   ├── terminal.json          # status bar, boot logs, quote, prompts, credits
 │   ├── blueprint.json         # sheet line, title block, axis labels, scale, notes
-│   ├── manifesto.json         # 5 manifesto paragraphs (limited inline HTML allowed)
+│   ├── manifesto.json         # manifesto paragraphs (limited inline HTML allowed)
 │   ├── contact.json           # 6 direct channels + publications link
 │   └── ui.json                # control/aria labels shared by both designs
 ├── css/
@@ -194,6 +194,25 @@ There is nothing to install, compile or bundle. Requirements: a browser and a st
 ## ⚙️ How it works
 
 **Content at runtime.** Each page `fetch()`es the JSON it needs from `content/` and paints it through `i18n.js`. Add or edit copy there — the HTML never hardcodes user-visible text beyond fallbacks.
+
+**What lives where (single source of truth)**
+
+| Visible item | File / key | Note |
+| :--- | :--- | :--- |
+| Name, identity line | `content/profile.json` → `name`, `identity` | TR/EN |
+| Version badge (`v5.8.0-beta.1`) | `content/profile.json` → `version` | `index.html` fallback is only `v…`; change the version in JSON |
+| Codename (`STILL BUILDING`) | `content/terminal.json` → `statusRight` | TR/EN |
+| Status bar left text | `content/terminal.json` → `statusLeft` | Small HTML fallback exists |
+| Manifesto revision date | `content/terminal.json` → `manifestoVersion` | `son rev` / `last rev`; updated by hand |
+| Boot logs | `content/terminal.json` → `logs[]` | `{NOW}` = month, `{WORK_YEARS}` / `{CODE_YEARS}` derived from `profile.json` start years |
+| Epigraph | `content/terminal.json` → `quote` | TR/EN |
+| Manifesto paragraphs | `content/manifesto.json` → `tr[]` / `en[]` | Limited `<strong>` / `<em>` allowed |
+| Blueprint sheet line / scale note | `content/blueprint.json` → `sheetLine`, `heroNote` | Keep the static fallbacks in `blueprint.html` in sync |
+| Blueprint axis end year | automatic — `js/blueprint.js` (`dimension-end-year`) | Never written by hand |
+| Blueprint initial font | `js/fonts.js` + `blueprint.html` early boot | Defaults to Plex Sans via `font:blueprint` |
+| Contact / publications | `content/contact.json` | TR/EN |
+| Control and aria labels | `content/ui.json` | Shared by both designs |
+| `sitemap.xml` `lastmod` | `sitemap.xml` | Updated by hand |
 
 **Storage keys** (all namespaced, all `localStorage`):
 
