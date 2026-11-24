@@ -40,7 +40,7 @@
             : (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         var l = localStorage.getItem('lang');
         if (l === 'en' || l === 'tr') { d.dataset.lang = l; d.lang = l; }
-        var f = localStorage.getItem('font');
+        var f = localStorage.getItem('font:blueprint');
         if (f) d.dataset.font = f;
     } catch (e) { /* private mode: defaults stay */ }
     </script>
@@ -68,7 +68,7 @@
 
             <div class="bar">
                 <span class="who" data-i18n="profile.name">Mahir Fatih</span>
-                <span class="meta" data-i18n="blueprint.sheetLine">BLUEPRINT 01 · REV 2026.11 · 1:1</span>
+                <span class="meta" data-i18n="blueprint.sheetLine">BLUEPRINT 01 · REV 2026-⁠11-⁠24 · 1:1</span>
                 <div class="controls" role="group" data-i18n-aria="blueprint.controls" aria-label="Kontroller">
                     <button type="button" data-lang-btn="tr" aria-pressed="true">TR</button>
                     <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
@@ -98,7 +98,7 @@
                 <!-- ---------- title block ---------- -->
                 <section class="hero">
                     <div class="hero-main">
-                        <p class="hero-note" aria-hidden="true" data-i18n="blueprint.heroNote">ÖLÇEK 1:1 · REV 2026.11</p>
+                        <p class="hero-note" aria-hidden="true" data-i18n="blueprint.heroNote">ÖLÇEK 1:1 · REV 2026-⁠11-⁠24</p>
                         <h1><span data-i18n="profile.name">Mahir Fatih</span></h1>
                         <p class="tagline" data-i18n="profile.identity">Active Builder, Full-Spectrum Coder &amp; Architect</p>
                     </div>
@@ -192,7 +192,7 @@
             </main>
 
             <footer class="sheet-footer">
-                <span>mahirfatih.com · <span data-i18n="blueprint.sheetLine">BLUEPRINT 01 · REV 2026.11 · 1:1</span></span>
+                <span>mahirfatih.com · <span data-i18n="blueprint.sheetLine">BLUEPRINT 01 · REV 2026-⁠11-⁠24 · 1:1</span></span>
             </footer>
 
         </div>

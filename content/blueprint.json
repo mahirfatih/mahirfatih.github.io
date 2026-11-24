@@ -1,6 +1,6 @@
 {
   "tr": {
-    "sheetLine": "BLUEPRINT 01 · REV 2026.11 · 1:1",
+    "sheetLine": "BLUEPRINT 01 · REV 2026-⁠11-⁠24 · 1:1",
     "controls": "Kontroller",
     "theme": "Açık / Koyu",
     "codeLabel": "Kod yazıyor",
@@ -13,7 +13,7 @@
     "contactHeading": "İletişim",
     "switchShort": "Terminal →",
     "switchLabel": "Terminal tasarımına geç",
-    "heroNote": "ÖLÇEK 1:1 · REV 2026.11",
+    "heroNote": "ÖLÇEK 1:1 · REV 2026-⁠11-⁠24",
     "scaleLabel": "Ölçek 1:1",
     "notesLabel": "Genel Notlar",
     "formulaSub": "her adım, önceki birikimi taşır",
@@ -28,7 +28,7 @@
     "formulaLegendMeta2": "σ·ε(x) — öngörülemezlik (rastlantı/şans)"
   },
   "en": {
-    "sheetLine": "BLUEPRINT 01 · REV 2026.11 · 1:1",
+    "sheetLine": "BLUEPRINT 01 · REV 2026-⁠11-⁠24 · 1:1",
     "controls": "Controls",
     "theme": "Light / Dark",
     "codeLabel": "Writing code",
@@ -41,7 +41,7 @@
     "contactHeading": "Contact",
     "switchShort": "Terminal →",
     "switchLabel": "Switch to the terminal design",
-    "heroNote": "SCALE 1:1 · REV 2026.11",
+    "heroNote": "SCALE 1:1 · REV 2026-⁠11-⁠24",
     "scaleLabel": "Scale 1:1",
     "notesLabel": "General Notes",
     "formulaSub": "each step carries what came before",

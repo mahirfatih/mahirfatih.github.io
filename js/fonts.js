@@ -57,6 +57,9 @@
     function storedFont() {
         var value = store.get(FONT_KEY);
         if (value) return value;
+        // Blueprint always opens on Plex Sans; the old shared key belongs to
+        // the terminal design and must not leak into this one.
+        if (design === 'blueprint') return null;
         // one-time carry-over from the old single shared key, if present
         var legacy = store.get(LEGACY_KEY);
         if (legacy) { store.set(FONT_KEY, legacy); return legacy; }
