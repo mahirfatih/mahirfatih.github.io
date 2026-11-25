@@ -4,13 +4,55 @@
 [![Release](https://img.shields.io/github/v/release/mahirfatih/mahirfatih.github.io?label=release&color=0969da)](https://github.com/mahirfatih/mahirfatih.github.io/releases)
 [![Fonts](https://img.shields.io/badge/fonts-26%20families%20%C2%B7%2050%20woff2-3ddc84)](./fonts/LICENSES.md)
 [![Font license](https://img.shields.io/badge/font%20license-OFL--1.1%20%7C%20MIT-yellow)](./fonts/LICENSES.md)
-[![Build](https://img.shields.io/badge/build-none%20%E2%80%94%20no%20step-lightgrey)](#-local-development)
+[![Build](https://img.shields.io/badge/build-none%20%E2%80%94%20no%20step-lightgrey)](#local-development)
+
+| 🎯 Purpose | 🖥️ Designs | 🌐 Languages | 🧱 Build |
+| :---: | :---: | :---: | :---: |
+| Personal site of Mahir Fatih | Terminal · blueprint · retro 404 | TR / EN · light / dark | Static — `git push` deploys |
+
+> **New here?** [See the three pages](#designs) · [Run it locally](#local-development) · [Browse the docs](#documentation)
 
 The personal site of **Mahir Fatih** — *Active Builder, Full-Spectrum Coder & Architect* — published from this repository through GitHub Pages at **[mahirfatih.com](https://mahirfatih.com)**.
 
 Two complete designs sit behind one shared content layer: a **terminal** home page and a **blueprint** sheet, plus an always-dark retro **404**. Plain HTML, CSS and JavaScript — **no build step, no framework, no third-party requests**. Every string lives in JSON, every font is self-hosted.
 
+> **Two things to know first:** assets are referenced with root-absolute paths, so the repository must be served from its root ([local development](#local-development)); and `lang`, `theme` and the per-design font choice live in `localStorage` ([storage keys](#storage-keys)) — no account, backend or telemetry.
+
 ---
+
+<a id="contents"></a>
+
+## 🧭 Contents
+
+| # | Section | What it answers |
+| :---: | :--- | :--- |
+| 01 | [📖 Overview](#overview) | What this repository publishes and how the pieces fit |
+| 02 | [✨ Features](#features) | What you get with zero build tooling |
+| 03 | [🛠 Tech stack](#tech-stack) | Why each layer was chosen |
+| 04 | [🎨 Designs](#designs) | The three pages and their roles |
+| 05 | [🔤 Fonts](#fonts) | The 26 families, licences and loading rules |
+| 06 | [📂 Project structure](#project-structure) | Where every file lives |
+| 07 | [🚀 Local development](#local-development) | Run it on your machine |
+| 08 | [⚙️ How it works](#how-it-works) | Runtime content, storage keys, responsibility split |
+| 09 | [🌐 Deployment](#deployment) | Push to publish and release history |
+| 10 | [✅ Quality checks](#quality-checks) | What was actually verified |
+| 11 | [📚 Documentation](#documentation) | Further reading |
+| 12 | [📜 License](#license) | Terms for the font assets |
+
+<details>
+<summary>🔎 <b>Jump into the details</b></summary>
+
+- [🧩 Content at runtime](#content-layer)
+- [📍 Single source of truth](#single-source)
+- [🔑 localStorage keys](#storage-keys)
+- [📝 Font notes & fallback](#font-notes)
+- [🏷️ Release history](#release-history)
+
+</details>
+
+---
+
+<a id="overview"></a>
 
 ## 📖 Overview
 
@@ -57,6 +99,8 @@ flowchart LR
 
 ---
 
+<a id="features"></a>
+
 ## ✨ Features
 
 - **Two designs, one content layer** — `index.html` renders a terminal session (status bar, boot logs, manifesto, quote); `blueprint.html` renders an engineering sheet (coordinate frame `1–8` × `A–F`, registration marks, scale bar, sticky toolbar, title block). Both read the same `content/*.json`.
@@ -70,6 +114,8 @@ flowchart LR
 - **Accessibility basics** — skip link, `aria-pressed` on toggles, visible `:focus-visible` outlines, `prefers-reduced-motion` respected, `.sr-only` headings for screen readers.
 
 ---
+
+<a id="tech-stack"></a>
 
 ## 🛠 Tech stack
 
@@ -85,6 +131,8 @@ flowchart LR
 
 ---
 
+<a id="designs"></a>
+
 ## 🎨 Designs
 
 | Page | Design | Default font | Robots | Notes |
@@ -96,6 +144,8 @@ flowchart LR
 Every page carries `data-design` so styling, storage keys and behaviour stay isolated. Switching between the two designs is a plain link — `Blueprint →` in the terminal header, back to the terminal from the sheet.
 
 ---
+
+<a id="fonts"></a>
 
 ## 🔤 Fonts
 
@@ -130,13 +180,17 @@ Every page carries `data-design` so styling, storage keys and behaviour stay iso
 | 25 | IBM Plex Sans | sans | 400–700 | OFL-1.1 | [IBM/plex](https://github.com/IBM/plex) |
 | 26 | IBM Plex Sans Condensed | sans | 400–700 | OFL-1.1 | [IBM/plex](https://github.com/IBM/plex) |
 
-Notes:
+<a id="font-notes"></a>
+
+### 📝 Notes
 
 - **Only redistributable faces.** Proprietary system fonts (for example Apple's SF Mono) are deliberately absent — no legitimate open distribution exists for them, so they were never vendored.
 - **Fallback is built in.** If a face fails to load, `css/base.css` falls back to `ui-monospace, SFMono-Regular, Menlo, Consolas, monospace` (or the system UI stack for the sans families).
 - **Only the active family loads.** The library is 1.6 MB on disk, but a page fetches just its own family — a Latin subset is ~31–40 KB.
 
 ---
+
+<a id="project-structure"></a>
 
 ## 📂 Project structure
 
@@ -176,6 +230,8 @@ mahirfatih.github.io/
 
 ---
 
+<a id="local-development"></a>
+
 ## 🚀 Local development
 
 ```bash
@@ -191,11 +247,19 @@ There is nothing to install, compile or bundle. Requirements: a browser and a st
 
 ---
 
+<a id="how-it-works"></a>
+
 ## ⚙️ How it works
 
-**Content at runtime.** Each page `fetch()`es the JSON it needs from `content/` and paints it through `i18n.js`. Add or edit copy there — the HTML never hardcodes user-visible text beyond fallbacks.
+<a id="content-layer"></a>
 
-**What lives where (single source of truth)**
+### 🧩 Content at runtime
+
+Each page `fetch()`es the JSON it needs from `content/` and paints it through `i18n.js`. Add or edit copy there — the HTML never hardcodes user-visible text beyond fallbacks.
+
+<a id="single-source"></a>
+
+### 📍 What lives where (single source of truth)
 
 | Visible item | File / key | Note |
 | :--- | :--- | :--- |
@@ -214,7 +278,11 @@ There is nothing to install, compile or bundle. Requirements: a browser and a st
 | Control and aria labels | `content/ui.json` | Shared by both designs |
 | `sitemap.xml` `lastmod` | `sitemap.xml` | Updated by hand |
 
-**Storage keys** (all namespaced, all `localStorage`):
+<a id="storage-keys"></a>
+
+### 🔑 Storage keys
+
+All namespaced, all `localStorage`:
 
 | Key | Values | Owner |
 | :--- | :--- | :--- |
@@ -225,9 +293,13 @@ There is nothing to install, compile or bundle. Requirements: a browser and a st
 
 `fonts.js` builds its key from `document.documentElement`'s `data-design` attribute, which is why the two designs remember different fonts. The 404 page shares the terminal's styling but loads no font picker.
 
-**Responsibility split.** `i18n.js` = language, theme, content, painting. `fonts.js` = the family list and `data-font`. `terminal.js` / `blueprint.js` = only what is unique to their page. Nothing cross-imports.
+### 🧱 Responsibility split
+
+`i18n.js` = language, theme, content, painting. `fonts.js` = the family list and `data-font`. `terminal.js` / `blueprint.js` = only what is unique to their page. Nothing cross-imports.
 
 ---
+
+<a id="deployment"></a>
 
 ## 🌐 Deployment
 
@@ -240,6 +312,10 @@ git commit -m "Update copy in content/terminal.json"
 git push origin main      # → live at https://mahirfatih.com
 ```
 
+<a id="release-history"></a>
+
+### 🏷️ Release history
+
 Release history lives in [GitHub Releases](https://github.com/mahirfatih/mahirfatih.github.io/releases):
 
 | Tag | Commit | Meaning |
@@ -250,6 +326,8 @@ Release history lives in [GitHub Releases](https://github.com/mahirfatih/mahirfa
 
 ---
 
+<a id="quality-checks"></a>
+
 ## ✅ Quality checks
 
 - **Responsive:** all three pages verified at 320, 360, 375, 390, 393, 412, 414, 430, 768, 1024 and 1280 px — `scrollWidth` equals the viewport at every width and no element crosses it.
@@ -259,11 +337,15 @@ Release history lives in [GitHub Releases](https://github.com/mahirfatih/mahirfa
 
 ---
 
+<a id="documentation"></a>
+
 ## 📚 Documentation
 
 - **[`fonts/LICENSES.md`](./fonts/LICENSES.md)** — the font register: 26 rows with license, copyright and upstream link, plus the full SIL OFL 1.1 and MIT/Bitstream Vera texts.
 
 ---
+
+<a id="license"></a>
 
 ## 📜 License
 

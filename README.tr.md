@@ -4,13 +4,55 @@
 [![Release](https://img.shields.io/github/v/release/mahirfatih/mahirfatih.github.io?label=release&color=0969da)](https://github.com/mahirfatih/mahirfatih.github.io/releases)
 [![Fonts](https://img.shields.io/badge/fonts-26%20aile%20%C2%B7%2050%20woff2-3ddc84)](./fonts/LICENSES.md)
 [![Font license](https://img.shields.io/badge/font%20license-OFL--1.1%20%7C%20MIT-yellow)](./fonts/LICENSES.md)
-[![Build](https://img.shields.io/badge/build-yok%20%E2%80%94%20ad%C4%B1m%20yok-lightgrey)](#-yerel-geli%C5%9Ftirme)
+[![Build](https://img.shields.io/badge/build-yok%20%E2%80%94%20ad%C4%B1m%20yok-lightgrey)](#yerel-gelistirme)
+
+| 🎯 Amaç | 🖥️ Tasarımlar | 🌐 Diller | 🧱 Build |
+| :---: | :---: | :---: | :---: |
+| Mahir Fatih'in kişisel sitesi | Terminal · blueprint · retro 404 | TR / EN · açık / koyu | Statik — `git push` yayındır |
+
+> **Yeni misin?** [Üç sayfaya bak](#tasarimlar) · [Yerelde çalıştır](#yerel-gelistirme) · [Dokümanlara göz at](#dokumantasyon)
 
 **Mahir Fatih** — *Active Builder, Full-Spectrum Coder & Architect* — kişisel sitesi. Bu depodan GitHub Pages ile yayınlanır: **[mahirfatih.com](https://mahirfatih.com)**.
 
 Tek bir ortak içerik katmanının arkasında iki tam tasarım duruyor: bir **terminal** ana sayfası ve bir **blueprint** sayfası; artı her zaman koyu, retro bir **404**. Saf HTML, CSS ve JavaScript — **build adımı yok, framework yok, üçüncü taraf istek yok**. Her metin JSON'da, her yazı tipi kendi sunucumuzda (self-hosted).
 
+> **İki şeyi bilerek başla:** varlıklar kök-kesin yollarla çağrılır, bu yüzden depo kökten sunulmalı ([yerel geliştirme](#yerel-gelistirme)); `lang`, `theme` ve tasarıma özel font seçimi `localStorage`'da tutulur ([depolama anahtarları](#depolama-anahtarlari)) — hesap, sunucu veya telemetri yok.
+
 ---
+
+<a id="icerikler"></a>
+
+## 🧭 İçindekiler
+
+| # | Bölüm | Ne yanıtlar? |
+| :---: | :--- | :--- |
+| 01 | [📖 Genel bakış](#genel-bakis) | Bu depo ne yayınlar, parçalar nasıl oturur |
+| 02 | [✨ Özellikler](#ozellikler) | Sıfır build aracıyla ne gelir |
+| 03 | [🛠 Teknolojiler](#teknoloji) | Her katman neden seçildi |
+| 04 | [🎨 Tasarımlar](#tasarimlar) | Üç sayfa ve rolleri |
+| 05 | [🔤 Fontlar](#fontlar) | 26 aile, lisanslar ve yükleme kuralları |
+| 06 | [📂 Klasör yapısı](#klasor-yapisi) | Her dosya nerede |
+| 07 | [🚀 Yerel geliştirme](#yerel-gelistirme) | Makinede çalıştır |
+| 08 | [⚙️ Nasıl çalışıyor](#nasil-calisir) | Çalışma anında içerik, depolama, sorumluluk ayrımı |
+| 09 | [🌐 Yayın](#yayin) | Push ile yayın ve sürüm geçmişi |
+| 10 | [✅ Kalite kontrolleri](#kalite-kontrolleri) | Gerçekte ne doğrulandı |
+| 11 | [📚 Dokümantasyon](#dokumantasyon) | Daha fazla okuma |
+| 12 | [📜 Lisans](#lisans) | Font varlıklarının koşulları |
+
+<details>
+<summary>🔎 <b>Ayrıntılara atla</b></summary>
+
+- [🧩 Çalışma anında içerik](#icerik-calisma-aninda)
+- [📍 Tek kaynak](#tek-kaynak)
+- [🔑 localStorage anahtarları](#depolama-anahtarlari)
+- [📝 Font notları ve yedek](#font-notlari)
+- [🏷️ Sürüm geçmişi](#surum-gecmisi)
+
+</details>
+
+---
+
+<a id="genel-bakis"></a>
 
 ## 📖 Genel bakış
 
@@ -57,6 +99,8 @@ flowchart LR
 
 ---
 
+<a id="ozellikler"></a>
+
 ## ✨ Özellikler
 
 - **İki tasarım, tek içerik katmanı** — `index.html` bir oturum çizer (durum çubuğu, açılış logları, manifesto, alıntı); `blueprint.html` bir teknik resim sayfası (koordinat çerçevesi `1–8` × `A–F`, registrasyon işaretleri, ölçek çubuğu, yapışkan araç çubuğu, antet bloğu). İkisi de aynı `content/*.json` dosyalarını okur.
@@ -71,6 +115,8 @@ flowchart LR
 
 ---
 
+<a id="teknoloji"></a>
+
 ## 🛠 Teknolojiler
 
 | Katman | Seçim | Neden |
@@ -81,9 +127,11 @@ flowchart LR
 | İçerik | Çalışma anında çekilen JSON | İki dil ve iki tasarım için tek kaynak |
 | Fontlar | `woff2`, self-hosted | Üçüncü taraf istek yok; tam lisans izi `fonts/LICENSES.md` içinde |
 | Barındırma | GitHub Pages + `CNAME` | Ücretsiz, sürümlü, `main`'e push ile yayına girer |
-| Build | **Hiçbir şey** | Depo kendisi çıktıtır |
+| Build | **Hiçbir şey** | Depo kendisi çıktıdır |
 
 ---
+
+<a id="tasarimlar"></a>
 
 ## 🎨 Tasarımlar
 
@@ -96,6 +144,8 @@ flowchart LR
 Her sayfa `data-design` taşır; böylece stil, depolama anahtarları ve davranış ayrışır. İki tasarım arası geçiş düz bir bağlantıdır — terminal başlığındaki `Blueprint →`, sayfadan geriye terminal bağlantısı.
 
 ---
+
+<a id="fontlar"></a>
 
 ## 🔤 Fontlar
 
@@ -130,13 +180,17 @@ Her sayfa `data-design` taşır; böylece stil, depolama anahtarları ve davran�
 | 25 | IBM Plex Sans | sans | 400–700 | OFL-1.1 | [IBM/plex](https://github.com/IBM/plex) |
 | 26 | IBM Plex Sans Condensed | sans | 400–700 | OFL-1.1 | [IBM/plex](https://github.com/IBM/plex) |
 
-Notlar:
+<a id="font-notlari"></a>
+
+### 📝 Notlar
 
 - **Yalnızca yeniden dağıtılabilir aileler.** Tescilli sistem fontları (ör. Apple'ın SF Mono'su) bilinçli olarak yok — bunlar için meşru bir açık dağıtım yolunun olmaması yeterli sebep; hiç eklenmedi.
 - **Yedek yerleşik.** Bir font yüklenemezse `css/base.css` içindeki yedeğe düşer: `ui-monospace, SFMono-Regular, Menlo, Consolas, monospace` (sans aileler için sistem arayüz yığını).
 - **Yalnızca etkin aile yüklenir.** Kütüphane diskte 1.6 MB; bir sayfa kendi ailesini çeker — Latin alt kümesi ≈31–40 KB.
 
 ---
+
+<a id="klasor-yapisi"></a>
 
 ## 📂 Klasör yapısı
 
@@ -176,6 +230,8 @@ mahirfatih.github.io/
 
 ---
 
+<a id="yerel-gelistirme"></a>
+
 ## 🚀 Yerel geliştirme
 
 ```bash
@@ -191,11 +247,19 @@ Kurulacak, derlenecek, paketlenecek hiçbir şey yok. Gereksinim: bir tarayıcı
 
 ---
 
+<a id="nasil-calisir"></a>
+
 ## ⚙️ Nasıl çalışıyor
 
-**Çalışma anında içerik.** Her sayfa ihtiyacı olan JSON'u `content/`'ten çeker ve `i18n.js` üzerinden basar. Metni orada düzenleyin — HTML'de kullanıcının göreceği metin (yedekler dışında) sabit yazılmaz.
+<a id="icerik-calisma-aninda"></a>
 
-**Nerede ne yazılır? (tek kaynak)**
+### 🧩 Çalışma anında içerik
+
+Her sayfa ihtiyacı olan JSON'u `content/`'ten çeker ve `i18n.js` üzerinden basar. Metni orada düzenleyin — HTML'de kullanıcının göreceği metin (yedekler dışında) sabit yazılmaz.
+
+<a id="tek-kaynak"></a>
+
+### 📍 Nerede ne yazılır? (tek kaynak)
 
 | Görünen öğe | Dosya / anahtar | Not |
 | :--- | :--- | :--- |
@@ -214,7 +278,11 @@ Kurulacak, derlenecek, paketlenecek hiçbir şey yok. Gereksinim: bir tarayıcı
 | Denetim ve aria etiketleri | `content/ui.json` | İki tasarımın paylaştığı metinler |
 | `sitemap.xml` `lastmod` | `sitemap.xml` | Elle güncellenir |
 
-**Depolama anahtarları** (hepsi isimlendirilmiş, hepsi `localStorage`):
+<a id="depolama-anahtarlari"></a>
+
+### 🔑 Depolama anahtarları
+
+Hepsi isimlendirilmiş, hepsi `localStorage`:
 
 | Anahtar | Değerler | Sahibi |
 | :--- | :--- | :--- |
@@ -225,9 +293,13 @@ Kurulacak, derlenecek, paketlenecek hiçbir şey yok. Gereksinim: bir tarayıcı
 
 `fonts.js` anahtarını `<html>`'deki `data-design` özniteliğinden üretir; iki tasarımın bu yüzden farklı fontları hatırlaması budur. 404 sayfası terminalin stilini paylaşır ama font seçicisini yüklemez.
 
-**Sorumluluk ayrımı.** `i18n.js` = dil, tema, içerik, baskı. `fonts.js` = aile listesi ve `data-font`. `terminal.js` / `blueprint.js` = yalnızca kendi sayfasına özgü olan. Hiçbiri birbirini içe aktarmaz.
+### 🧱 Sorumluluk ayrımı
+
+`i18n.js` = dil, tema, içerik, baskı. `fonts.js` = aile listesi ve `data-font`. `terminal.js` / `blueprint.js` = yalnızca kendi sayfasına özgü olan. Hiçbiri birbirini içe aktarmaz.
 
 ---
+
+<a id="yayin"></a>
 
 ## 🌐 Yayın
 
@@ -240,6 +312,10 @@ git commit -m "content/terminal.json içindeki metni güncelle"
 git push origin main      # → https://mahirfatih.com'da canlı
 ```
 
+<a id="surum-gecmisi"></a>
+
+### 🏷️ Sürüm geçmişi
+
 Sürüm geçmişi [GitHub Releases](https://github.com/mahirfatih/mahirfatih.github.io/releases) içinde:
 
 | Etiket | Commit | Anlamı |
@@ -250,6 +326,8 @@ Sürüm geçmişi [GitHub Releases](https://github.com/mahirfatih/mahirfatih.git
 
 ---
 
+<a id="kalite-kontrolleri"></a>
+
 ## ✅ Kalite kontrolleri
 
 - **Duyarlı:** üç sayfa da 320, 360, 375, 390, 393, 412, 414, 430, 768, 1024 ve 1280 px'de doğrulandı — her genişlikte `scrollWidth` görünür alana eşit, görünür alanı aşan öğe yok.
@@ -259,11 +337,15 @@ Sürüm geçmişi [GitHub Releases](https://github.com/mahirfatih/mahirfatih.git
 
 ---
 
+<a id="dokumantasyon"></a>
+
 ## 📚 Dokümantasyon
 
 - **[`fonts/LICENSES.md`](./fonts/LICENSES.md)** — font sicili: 26 satır, lisans + telif + kaynak bağlantısı, artı SIL OFL 1.1 ve MIT/Bitstream Vera tam metinleri.
 
 ---
+
+<a id="lisans"></a>
 
 ## 📜 Lisans
 
