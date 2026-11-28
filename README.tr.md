@@ -65,7 +65,7 @@ Tek bir ortak içerik katmanının arkasında iki tam tasarım duruyor: bir **te
 | **Diller** | Türkçe + İngilizce, `TR / EN` düğmesiyle yerinde geçiş |
 | **Teknoloji** | Statik HTML5 · CSS3 (custom properties) · saf JS · çalışma anında JSON `fetch()` |
 | **Build** | **Yok** — ne itersen GitHub Pages onu yayınlar |
-| **Ağırlık** | Sayfa başına ≈65 KB HTML + CSS + JS + JSON, fontlar ihtiyaçta yüklenir |
+| **Ağırlık** | Sayfa başına ≈70–75 KB HTML + CSS + JS + JSON (sıkıştırılmamış), fontlar ihtiyaçta yüklenir |
 
 ```mermaid
 flowchart LR
@@ -74,6 +74,7 @@ flowchart LR
         T["terminal.json"]
         B["blueprint.json"]
         M["manifesto.json"]
+        FM["formula.json"]
         C["contact.json"]
         U["ui.json"]
     end
@@ -208,6 +209,7 @@ mahirfatih.github.io/
 │   ├── terminal.json          # durum çubuğu, açılış logları, alıntı, istemler, künye
 │   ├── blueprint.json         # sayfa satırı, antet bloğu, eksen etiketleri, ölçek, notlar
 │   ├── manifesto.json         # manifesto paragrafları (sınırlı satır içi HTML)
+│   ├── formula.json           # temel ilke bloğu: etiketler, iki ifade, legend, açıklama
 │   ├── contact.json           # 6 doğrudan kanal + yayınlar bağlantısı
 │   └── ui.json                # iki tasarımın paylaştığı denetim/aria etiketleri
 ├── css/
@@ -218,7 +220,7 @@ mahirfatih.github.io/
 ├── js/
 │   ├── i18n.js                # dil · tema · içerik yükleme · metin baskısı (tasarım bilmez)
 │   ├── fonts.js               # 26 ailelik seçici, tercih tasarıma göre saklanır
-│   ├── terminal.js            # tasarım 1: yalnızca açılış logları + manifesto
+│   ├── terminal.js            # tasarım 1: açılış logları, manifesto + formül bloğu
 │   └── blueprint.js           # tasarım 2: yalnızca ölçü yılı (gerisi JSON'dan)
 ├── fonts/                     # 50 self-hosted woff2 dosyası (1.6 MB)
 │   └── LICENSES.md            # font başına lisans, telif ve kaynak bağlantısı + OFL-1.1 / MIT tam metni
@@ -226,7 +228,7 @@ mahirfatih.github.io/
 └── .gitignore                 # DOMAINS.md — yerel çalışma notları, asla push edilmez
 ```
 
-78 izlenen dosya: ≈1 770 satır HTML/CSS/JS, 152 satır içerik JSON'u, 50 font dosyası, artı bu README ve Türkçe ikizi.
+79 izlenen dosya: ≈1 910 satır HTML/CSS/JS, 190 satır içerik JSON'u, 50 font dosyası, artı bu README ve Türkçe ikizi.
 
 ---
 
@@ -257,6 +259,8 @@ Kurulacak, derlenecek, paketlenecek hiçbir şey yok. Gereksinim: bir tarayıcı
 
 Her sayfa ihtiyacı olan JSON'u `content/`'ten çeker ve `i18n.js` üzerinden basar. Metni orada düzenleyin — HTML'de kullanıcının göreceği metin (yedekler dışında) sabit yazılmaz.
 
+Formül bloğu bu kuralı bozan örnekti: metni `terminal.js` içine ve `content/blueprint.json`'a kopyalanmıştı. Artık tek yerde, `content/formula.json` içinde duruyor; her tasarım kendi markup'ını koruyor, metni oradan okuyor.
+
 <a id="tek-kaynak"></a>
 
 ### 📍 Nerede ne yazılır? (tek kaynak)
@@ -271,6 +275,7 @@ Her sayfa ihtiyacı olan JSON'u `content/`'ten çeker ve `i18n.js` üzerinden ba
 | Açılış logları | `content/terminal.json` → `logs[]` | `{NOW}` = ay, `{WORK_YEARS}` / `{CODE_YEARS}` = `profile.json` başlangıç yıllarından otomatik |
 | Alıntı | `content/terminal.json` → `quote` | TR/EN |
 | Manifesto paragrafları | `content/manifesto.json` → `tr[]` / `en[]` | Sınırlı `<strong>` / `<em>` kullanılabilir |
+| Temel ilke formülü | `content/formula.json` → `tagClosed`, `tagOpen`, `sub`, `summary`, `simple`, `extended`, `step`, `legend.*`, `explain` | İki tasarım için tek dosya: `terminal.js` markup'ı kurar, `blueprint.html` `data-i18n="formula.*"` ile basar |
 | Blueprint antet / ölçek notu | `content/blueprint.json` → `sheetLine`, `heroNote` | `blueprint.html` içindeki statik yedekler de aynı olmalı |
 | Blueprint eksen bitiş yılı | otomatik — `js/blueprint.js` (`dimension-end-year`) | Elle yazılmaz |
 | Blueprint ilk fontu | `js/fonts.js` + `blueprint.html` early boot | Varsayılan Plex Sans, `font:blueprint` |
@@ -334,6 +339,7 @@ Sürüm geçmişi [GitHub Releases](https://github.com/mahirfatih/mahirfatih.git
 - **Konsol:** hiçbir sayfada hata veya uyarı yok.
 - **Ağ:** üçüncü taraf istek sıfır; fontlar, görseller ve içerik hep bu kökenden.
 - **Bağlantılar:** üretimde `robots.txt`, `sitemap.xml`, `og-image` ve tüm font yolları HTTP 200 döner.
+- **İçerik anahtarları:** iki sayfadaki her `data-i18n` anahtarı TR ve EN'de çözülüyor — boş ya da sahipsiz metin yok.
 
 ---
 

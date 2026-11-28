@@ -65,7 +65,7 @@ Two complete designs sit behind one shared content layer: a **terminal** home pa
 | **Languages** | Turkish + English, switched in place with a `TR / EN` toggle |
 | **Stack** | Static HTML5 · CSS3 (custom properties) · vanilla JS · runtime `fetch()` of JSON |
 | **Build** | **None** — what you push is what GitHub Pages serves |
-| **Weight** | ≈65 KB of HTML + CSS + JS + JSON per page, fonts loaded on demand |
+| **Weight** | ≈70–75 KB of HTML + CSS + JS + JSON per page (uncompressed), fonts loaded on demand |
 
 ```mermaid
 flowchart LR
@@ -74,6 +74,7 @@ flowchart LR
         T["terminal.json"]
         B["blueprint.json"]
         M["manifesto.json"]
+        FM["formula.json"]
         C["contact.json"]
         U["ui.json"]
     end
@@ -208,6 +209,7 @@ mahirfatih.github.io/
 │   ├── terminal.json          # status bar, boot logs, quote, prompts, credits
 │   ├── blueprint.json         # sheet line, title block, axis labels, scale, notes
 │   ├── manifesto.json         # manifesto paragraphs (limited inline HTML allowed)
+│   ├── formula.json           # core-principle block: tags, both expressions, legend, explanation
 │   ├── contact.json           # 6 direct channels + publications link
 │   └── ui.json                # control/aria labels shared by both designs
 ├── css/
@@ -218,7 +220,7 @@ mahirfatih.github.io/
 ├── js/
 │   ├── i18n.js                # language · theme · content loading · text painting (design-agnostic)
 │   ├── fonts.js               # 26-family picker, preference stored per design
-│   ├── terminal.js            # design 1: boot logs + manifesto rendering only
+│   ├── terminal.js            # design 1: boot logs, manifesto + formula block rendering
 │   └── blueprint.js           # design 2: dimension year only (the rest comes from JSON)
 ├── fonts/                     # 50 self-hosted woff2 files (1.6 MB)
 │   └── LICENSES.md            # per-font license, copyright and upstream link + OFL-1.1 / MIT full text
@@ -226,7 +228,7 @@ mahirfatih.github.io/
 └── .gitignore                 # DOMAINS.md — local working notes, never pushed
 ```
 
-78 tracked files: ~1 770 lines of HTML/CSS/JS, 152 lines of content JSON, 50 font files, plus this README and its Turkish twin.
+79 tracked files: ~1 910 lines of HTML/CSS/JS, 190 lines of content JSON, 50 font files, plus this README and its Turkish twin.
 
 ---
 
@@ -257,6 +259,8 @@ There is nothing to install, compile or bundle. Requirements: a browser and a st
 
 Each page `fetch()`es the JSON it needs from `content/` and paints it through `i18n.js`. Add or edit copy there — the HTML never hardcodes user-visible text beyond fallbacks.
 
+The formula block is the case that used to break this rule: its strings were copy-pasted into `terminal.js` and `content/blueprint.json`. They now live once in `content/formula.json`; each design keeps its own markup and reads the text from there.
+
 <a id="single-source"></a>
 
 ### 📍 What lives where (single source of truth)
@@ -271,6 +275,7 @@ Each page `fetch()`es the JSON it needs from `content/` and paints it through `i
 | Boot logs | `content/terminal.json` → `logs[]` | `{NOW}` = month, `{WORK_YEARS}` / `{CODE_YEARS}` derived from `profile.json` start years |
 | Epigraph | `content/terminal.json` → `quote` | TR/EN |
 | Manifesto paragraphs | `content/manifesto.json` → `tr[]` / `en[]` | Limited `<strong>` / `<em>` allowed |
+| Core-principle formula | `content/formula.json` → `tagClosed`, `tagOpen`, `sub`, `summary`, `simple`, `extended`, `step`, `legend.*`, `explain` | One file for both designs: `terminal.js` builds the markup, `blueprint.html` paints it with `data-i18n="formula.*"` |
 | Blueprint sheet line / scale note | `content/blueprint.json` → `sheetLine`, `heroNote` | Keep the static fallbacks in `blueprint.html` in sync |
 | Blueprint axis end year | automatic — `js/blueprint.js` (`dimension-end-year`) | Never written by hand |
 | Blueprint initial font | `js/fonts.js` + `blueprint.html` early boot | Defaults to Plex Sans via `font:blueprint` |
@@ -334,6 +339,7 @@ Release history lives in [GitHub Releases](https://github.com/mahirfatih/mahirfa
 - **Console:** no errors or warnings on any page.
 - **Network:** zero third-party requests; fonts, images and content all come from this origin.
 - **Links:** `robots.txt`, `sitemap.xml`, `og-image` and every font path return HTTP 200 in production.
+- **Content keys:** every `data-i18n` key on both pages resolves in TR and EN — no empty or orphaned strings.
 
 ---
 
