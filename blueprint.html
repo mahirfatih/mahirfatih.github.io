@@ -57,7 +57,7 @@
     <script defer src="/js/fonts.js"></script>
     <script defer src="/js/blueprint.js"></script>
 </head>
-<body data-sections="ui,profile,manifesto,contact,blueprint">
+<body data-sections="ui,profile,manifesto,contact,blueprint,formula">
     <a class="skip-link" href="#main" data-i18n="ui.skipLink">İçeriğe geç</a>
 
     <div class="sheet">
@@ -151,21 +151,21 @@
                         <p data-i18n-html="manifesto.1"></p>
                         <div class="formula-block">
                             <div class="formula-tag">
-                                <span class="tag-closed" data-i18n="blueprint.formulaTagClosed"></span>
-                                <span class="tag-open" data-i18n="blueprint.formulaTagOpen"></span>
+                                <span class="tag-closed" data-i18n="formula.tagClosed"></span>
+                                <span class="tag-open" data-i18n="formula.tagOpen"></span>
                             </div>
-                            <div class="formula">f(x) = f(x − y) + y</div>
-                            <div class="formula-sub" data-i18n="blueprint.formulaSub"></div>
+                            <div class="formula" data-i18n="formula.simple">f(x) = f(x − y) + y</div>
+                            <div class="formula-sub" data-i18n="formula.sub"></div>
                             <details class="formula-details">
-                                <summary data-i18n="blueprint.formulaDetails"></summary>
+                                <summary data-i18n="formula.summary"></summary>
                                 <div class="formula-detail-body">
-                                    <p class="formula-step" data-i18n="blueprint.formulaStepMeta"></p>
-                                    <div class="formula formula-meta">f(x) ≈ α·f(x−y) + β·y − T·ΔS + σ·ε(x)</div>
+                                    <p class="formula-step" data-i18n="formula.step"></p>
+                                    <div class="formula formula-meta" data-i18n="formula.extended">f(x) ≈ α·f(x−y) + β·y − T·ΔS + σ·ε(x)</div>
                                     <div class="formula-legend">
-                                        <span data-i18n="blueprint.formulaLegendMeta1"></span>
-                                        <span data-i18n="blueprint.formulaLegendMeta2"></span>
+                                        <span data-i18n="formula.legend.entropy"></span>
+                                        <span data-i18n="formula.legend.chance"></span>
                                     </div>
-                                    <p class="formula-explain" data-i18n="blueprint.formulaExplain"></p>
+                                    <p class="formula-explain" data-i18n="formula.explain"></p>
                                 </div>
                             </details>
                         </div>

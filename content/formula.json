@@ -1,0 +1,32 @@
+{
+  "tr": {
+    "tagClosed": "TEMEL İLKE · ÖZYİNELEMELİ BİRİKİM",
+    "tagOpen": "TEMEL İLKE · BİR MODEL",
+    "sub": "her adım, önceki birikimi taşır",
+    "summary": "detaylar",
+    "simple": "f(x) = f(x − y) + y",
+    "extended": "f(x) ≈ α·f(x−y) + β·y − T·ΔS + σ·ε(x)",
+    "step": "İnsan Hâli",
+    "legend": {
+      "memory": "α — hafıza / sönüm (0 < α < 1) · β — yaşanmışlıkların izi",
+      "entropy": "−T·ΔS — entropik maliyet",
+      "chance": "σ·ε(x) — öngörülemezlik (rastlantı/şans)"
+    },
+    "explain": "Saf formül, insanı hiçbir şeyi unutmayan, entropiye bile yenilmeyen kusursuz bir nesne gibi modeller; oysa insan da evrendeki her şey gibi entropiye tabidir. Üstelik insan, ne her şeyi aynı şekilde saklar ne de her ânı aynı şiddette yaşar. Bu yüzden insanın mevcut hâli mutlak bir toplam değil; geçmişinden geriye kalan sönümlenmiş hafızası ile yeni deneyimlerinin derinliğinden, varoluşun kaçınılmaz entropik yıpranmasının düşülmesi ve üzerine hayatın öngörülemez rastlantılarının eklenmesiyle her an yeniden şekillenen bir kemâlat hâlidir."
+  },
+  "en": {
+    "tagClosed": "CORE PRINCIPLE · RECURSIVE ACCUMULATION",
+    "tagOpen": "CORE PRINCIPLE · A MODEL",
+    "sub": "each step carries what came before",
+    "summary": "details",
+    "simple": "f(x) = f(x − y) + y",
+    "extended": "f(x) ≈ α·f(x−y) + β·y − T·ΔS + σ·ε(x)",
+    "step": "Human State",
+    "legend": {
+      "memory": "α — memory / damping (0 < α < 1) · β — trace of lived experience",
+      "entropy": "−T·ΔS — entropic cost",
+      "chance": "σ·ε(x) — unpredictability (chance/luck)"
+    },
+    "explain": "The pure formula models a human as an object that forgets nothing and never yields to entropy; yet a human, like everything in the universe, is subject to entropy. At the same time, a human neither stores everything the same way nor lives every moment with the same intensity."
+  }
+}
